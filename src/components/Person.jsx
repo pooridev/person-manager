@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Person extends Component {
-	render() {
-		return <p>Pooria - Faramarzian</p>;
-	}
-}
+const Person = props => {
+	return (
+		<div>
+			<p>{`${props.firstName} ${props.lastName}`}</p>
+		</div>
+	);
+};
 
 export default Person;

@@ -16,7 +16,16 @@ class App extends Component {
 	handleShowPerson = () => {
 		this.setState({ showPersons: !this.state.showPersons });
 	};
+	handleDeletePerson = id => {
+		const perosns = [...this.state.persons];
+		const filteredPersons = perosns.filter(person => person.id !== id);
+		console.log(filteredPersons);
+	};
 	render() {
+		const buttonStyle = {
+			padding: '0.5rem',
+			backgroundColor: 'skyBlue'
+		};
 		const { persons, showPersons } = this.state;
 		let person = null;
 		if (showPersons) {
@@ -27,7 +36,9 @@ class App extends Component {
 				<h2>Hello World</h2>
 				<hr />
 				{person}
-				<button onClick={this.handleShowPerson}>Show Perosns</button>
+				<button style={buttonStyle} onClick={this.handleShowPerson}>
+					Show Perosns
+				</button>
 			</div>
 		);
 	}

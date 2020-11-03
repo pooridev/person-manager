@@ -7,28 +7,27 @@ import './App.css';
 class App extends Component {
 	state = {
 		persons: [
-			{ firstName: 'Pooria', lastName: 'Faramarzian' },
-			{ firstName: 'Ali', lastName: 'Alavi' },
-			{ firstName: 'younes', lastName: 'Ebadi' }
-		]
+			{ id: 1, firstName: 'Pooria', lastName: 'Faramarzian' },
+			{ id: 2, firstName: 'Ali', lastName: 'Alavi' },
+			{ id: 3, firstName: 'younes', lastName: 'Ebadi' }
+		],
+		showPersons: false
 	};
-	handleChangePersons = () => {
-		this.setState({
-			persons: [
-				{ firstName: 'Ali', lastName: 'Alavi' },
-				{ firstName: 'Mohammad', lastName: 'Faramarzian' },
-				{ firstName: 'Saeed', lastName: 'Ebadi' }
-			]
-		});
+	handleShowPerson = () => {
+		this.setState({ showPersons: !this.state.showPersons });
 	};
 	render() {
-		const { persons } = this.state;
+		const { persons, showPersons } = this.state;
+		let person = null;
+		if (showPersons) {
+			person = <Persons persons={persons} />;
+		}
 		return (
 			<div className='App'>
 				<h2>Hello World</h2>
 				<hr />
-				<Persons persons={persons} />
-				<button onClick={this.handleChangePersons}>Change It</button>
+				{person}
+				<button onClick={this.handleShowPerson}>Show Perosns</button>
 			</div>
 		);
 	}

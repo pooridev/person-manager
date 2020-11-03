@@ -5,7 +5,11 @@ const Persons = ({ persons }) => {
 	return (
 		<div>
 			{persons.map(person => (
-				<Person firstName={person.firstName} lastName={person.lastName} />
+				<Person
+					firstName={person.firstName}
+					lastName={person.lastName}
+					key={person.id}
+				/>
 			))}
 		</div>
 	);

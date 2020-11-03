@@ -13,14 +13,16 @@ class App extends Component {
 		],
 		showPersons: false
 	};
+
 	handleShowPerson = () => {
 		this.setState({ showPersons: !this.state.showPersons });
 	};
 	handleDeletePerson = id => {
 		const perosns = [...this.state.persons];
 		const filteredPersons = perosns.filter(person => person.id !== id);
-		console.log(filteredPersons);
+		this.setState({ persons: filteredPersons });
 	};
+
 	render() {
 		const buttonStyle = {
 			padding: '0.5rem',
@@ -29,7 +31,9 @@ class App extends Component {
 		const { persons, showPersons } = this.state;
 		let person = null;
 		if (showPersons) {
-			person = <Persons persons={persons} />;
+			person = (
+				<Persons persons={persons} personDelete={this.handleDeletePerson} />
+			);
 		}
 		return (
 			<div className='App'>

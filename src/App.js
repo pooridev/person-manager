@@ -7,9 +7,9 @@ import './App.css';
 class App extends Component {
 	state = {
 		persons: [
-			{ id: 1, firstName: 'Pooria', lastName: 'Faramarzian' },
-			{ id: 2, firstName: 'Ali', lastName: 'Alavi' },
-			{ id: 3, firstName: 'younes', lastName: 'Ebadi' }
+			{ id: 1, fullName: 'Pooria Faramarzian' },
+			{ id: 2, fullName: 'Ali alavi' },
+			{ id: 3, fullName: 'Younes Ebadi' }
 		],
 		showPersons: false
 	};
@@ -18,9 +18,20 @@ class App extends Component {
 		this.setState({ showPersons: !this.state.showPersons });
 	};
 	handleDeletePerson = id => {
-		const perosns = [...this.state.persons];
-		const filteredPersons = perosns.filter(person => person.id !== id);
+		const persons = [...this.state.persons];
+		const filteredPersons = persons.filter(person => person.id !== id);
 		this.setState({ persons: filteredPersons });
+	};
+	handleChangePerson = (event, id) => {
+		const { persons: allPersons } = this.state;
+		const personIndex = allPersons.findIndex(person => person.id === id);
+		const person = allPersons[personIndex];
+		person.fullName = event.target.value;
+
+		const persons = [...allPersons];
+		persons[personIndex] = person;
+
+		this.setState({ persons });
 	};
 
 	render() {
@@ -32,16 +43,20 @@ class App extends Component {
 		let person = null;
 		if (showPersons) {
 			person = (
-				<Persons persons={persons} personDelete={this.handleDeletePerson} />
+				<Persons
+					persons={persons}
+					personDelete={this.handleDeletePerson}
+					personChange={this.handleChangePerson}
+				/>
 			);
 		}
 		return (
 			<div className='App'>
-				<h2>Hello World</h2>
+				<h2>Persons Manager</h2>
 				<hr />
 				{person}
 				<button style={buttonStyle} onClick={this.handleShowPerson}>
-					Show Perosns
+					Show Persons
 				</button>
 			</div>
 		);

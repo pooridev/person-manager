@@ -31,11 +31,14 @@ class App extends Component {
 		this.setState({ persons });
 	};
 	handleNewPerson = () => {
+		const taskInput = document.querySelector('.taskInput');
+		if (taskInput.value === null || taskInput.value === '') return;
 		const persons = [...this.state.persons];
 		const person = {
-			id: Math.floor(Math.random) * 100,
+			id: Math.floor(Math.random() * 100),
 			fullName: this.state.person
 		};
+
 		persons.push(person);
 		this.setState({ persons, person: '' });
 	};
@@ -62,16 +65,20 @@ class App extends Component {
 		}
 		return (
 			<div className='App'>
-				<h2>Persons Manager</h2>
+				<h2>Person Manager</h2>
 				<hr />
 				<div>
 					<input
 						type='text'
 						placeholder='Write down new person'
+						className='taskInput'
 						value={this.state.person}
 						onChange={this.setPerson}
 					/>
-					<button onClick={this.handleNewPerson}>Add</button>
+					<button
+						onClick={this.handleNewPerson}
+						className='btn btn-md btn-success fa fa-plus-square'
+					/>
 				</div>
 				<button style={buttonStyle} onClick={this.handleShowPerson}>
 					Show Persons

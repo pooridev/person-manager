@@ -5,7 +5,7 @@ const Person = ({ fullName, personDelete, changed }) => {
 	return (
 		<div className="person">
 			<p>{`${fullName}`}</p>
-			<input type='text' onChange={changed}></input>
+			<input type='text' onChange={changed} />
 			<button onClick={personDelete}>Delete</button>
 		</div>
 	);

@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * Bootstrap Reboot v4.5.3 (https://getbootstrap.com/)
+=======
+ * Bootstrap Reboot v4.5.2 (https://getbootstrap.com/)
+>>>>>>> 22bb7e5... bootstrap and font awesome added
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -186,7 +190,10 @@ caption {
 
 th {
   text-align: inherit;
+<<<<<<< HEAD
   text-align: -webkit-match-parent;
+=======
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 }
 
 label {

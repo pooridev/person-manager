@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
   * Bootstrap v4.5.3 (https://getbootstrap.com/)
+=======
+  * Bootstrap v4.5.2 (https://getbootstrap.com/)
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   * Copyright 2011-2020 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
@@ -9,9 +13,13 @@
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.bootstrap = {}, global.jQuery));
 }(this, (function (exports, $) { 'use strict';
 
+<<<<<<< HEAD
   function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
   var $__default = /*#__PURE__*/_interopDefaultLegacy($);
+=======
+  $ = $ && Object.prototype.hasOwnProperty.call($, 'default') ? $['default'] : $;
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
   function _defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -55,7 +63,11 @@
 
   /**
    * --------------------------------------------------------------------------
+<<<<<<< HEAD
    * Bootstrap (v4.5.3): util.js
+=======
+   * Bootstrap (v4.5.2): util.js
+>>>>>>> 22bb7e5... bootstrap and font awesome added
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -82,7 +94,11 @@
       bindType: TRANSITION_END,
       delegateType: TRANSITION_END,
       handle: function handle(event) {
+<<<<<<< HEAD
         if ($__default['default'](event.target).is(this)) {
+=======
+        if ($(event.target).is(this)) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
           return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
         }
 
@@ -95,7 +111,11 @@
     var _this = this;
 
     var called = false;
+<<<<<<< HEAD
     $__default['default'](this).one(Util.TRANSITION_END, function () {
+=======
+    $(this).one(Util.TRANSITION_END, function () {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       called = true;
     });
     setTimeout(function () {
@@ -107,8 +127,13 @@
   }
 
   function setTransitionEndSupport() {
+<<<<<<< HEAD
     $__default['default'].fn.emulateTransitionEnd = transitionEndEmulator;
     $__default['default'].event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
+=======
+    $.fn.emulateTransitionEnd = transitionEndEmulator;
+    $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   }
   /**
    * --------------------------------------------------------------------------
@@ -121,6 +146,10 @@
     TRANSITION_END: 'bsTransitionEnd',
     getUID: function getUID(prefix) {
       do {
+<<<<<<< HEAD
+=======
+        // eslint-disable-next-line no-bitwise
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
       } while (document.getElementById(prefix));
 
@@ -136,7 +165,11 @@
 
       try {
         return document.querySelector(selector) ? selector : null;
+<<<<<<< HEAD
       } catch (_) {
+=======
+      } catch (err) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         return null;
       }
     },
@@ -146,8 +179,13 @@
       } // Get transition-duration of the element
 
 
+<<<<<<< HEAD
       var transitionDuration = $__default['default'](element).css('transition-duration');
       var transitionDelay = $__default['default'](element).css('transition-delay');
+=======
+      var transitionDuration = $(element).css('transition-duration');
+      var transitionDelay = $(element).css('transition-delay');
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       var floatTransitionDuration = parseFloat(transitionDuration);
       var floatTransitionDelay = parseFloat(transitionDelay); // Return 0 if element or transition duration is not found
 
@@ -164,8 +202,14 @@
       return element.offsetHeight;
     },
     triggerTransitionEnd: function triggerTransitionEnd(element) {
+<<<<<<< HEAD
       $__default['default'](element).trigger(TRANSITION_END);
     },
+=======
+      $(element).trigger(TRANSITION_END);
+    },
+    // TODO: Remove in v5
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     supportsTransitionEnd: function supportsTransitionEnd() {
       return Boolean(TRANSITION_END);
     },
@@ -208,11 +252,19 @@
       return Util.findShadowRoot(element.parentNode);
     },
     jQueryDetection: function jQueryDetection() {
+<<<<<<< HEAD
       if (typeof $__default['default'] === 'undefined') {
         throw new TypeError('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
       }
 
       var version = $__default['default'].fn.jquery.split(' ')[0].split('.');
+=======
+      if (typeof $ === 'undefined') {
+        throw new TypeError('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
+      }
+
+      var version = $.fn.jquery.split(' ')[0].split('.');
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       var minMajor = 1;
       var ltMajor = 2;
       var minMinor = 9;
@@ -234,11 +286,19 @@
    */
 
   var NAME = 'alert';
+<<<<<<< HEAD
   var VERSION = '4.5.3';
   var DATA_KEY = 'bs.alert';
   var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
   var JQUERY_NO_CONFLICT = $__default['default'].fn[NAME];
+=======
+  var VERSION = '4.5.2';
+  var DATA_KEY = 'bs.alert';
+  var EVENT_KEY = "." + DATA_KEY;
+  var DATA_API_KEY = '.data-api';
+  var JQUERY_NO_CONFLICT = $.fn[NAME];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   var SELECTOR_DISMISS = '[data-dismiss="alert"]';
   var EVENT_CLOSE = "close" + EVENT_KEY;
   var EVENT_CLOSED = "closed" + EVENT_KEY;
@@ -278,7 +338,11 @@
     };
 
     _proto.dispose = function dispose() {
+<<<<<<< HEAD
       $__default['default'].removeData(this._element, DATA_KEY);
+=======
+      $.removeData(this._element, DATA_KEY);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       this._element = null;
     } // Private
     ;
@@ -292,43 +356,70 @@
       }
 
       if (!parent) {
+<<<<<<< HEAD
         parent = $__default['default'](element).closest("." + CLASS_NAME_ALERT)[0];
+=======
+        parent = $(element).closest("." + CLASS_NAME_ALERT)[0];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       }
 
       return parent;
     };
 
     _proto._triggerCloseEvent = function _triggerCloseEvent(element) {
+<<<<<<< HEAD
       var closeEvent = $__default['default'].Event(EVENT_CLOSE);
       $__default['default'](element).trigger(closeEvent);
+=======
+      var closeEvent = $.Event(EVENT_CLOSE);
+      $(element).trigger(closeEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       return closeEvent;
     };
 
     _proto._removeElement = function _removeElement(element) {
       var _this = this;
 
+<<<<<<< HEAD
       $__default['default'](element).removeClass(CLASS_NAME_SHOW);
 
       if (!$__default['default'](element).hasClass(CLASS_NAME_FADE)) {
+=======
+      $(element).removeClass(CLASS_NAME_SHOW);
+
+      if (!$(element).hasClass(CLASS_NAME_FADE)) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         this._destroyElement(element);
 
         return;
       }
 
       var transitionDuration = Util.getTransitionDurationFromElement(element);
+<<<<<<< HEAD
       $__default['default'](element).one(Util.TRANSITION_END, function (event) {
+=======
+      $(element).one(Util.TRANSITION_END, function (event) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         return _this._destroyElement(element, event);
       }).emulateTransitionEnd(transitionDuration);
     };
 
     _proto._destroyElement = function _destroyElement(element) {
+<<<<<<< HEAD
       $__default['default'](element).detach().trigger(EVENT_CLOSED).remove();
+=======
+      $(element).detach().trigger(EVENT_CLOSED).remove();
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     } // Static
     ;
 
     Alert._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
+<<<<<<< HEAD
         var $element = $__default['default'](this);
+=======
+        var $element = $(this);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         var data = $element.data(DATA_KEY);
 
         if (!data) {
@@ -368,18 +459,30 @@
    */
 
 
+<<<<<<< HEAD
   $__default['default'](document).on(EVENT_CLICK_DATA_API, SELECTOR_DISMISS, Alert._handleDismiss(new Alert()));
+=======
+  $(document).on(EVENT_CLICK_DATA_API, SELECTOR_DISMISS, Alert._handleDismiss(new Alert()));
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   /**
    * ------------------------------------------------------------------------
    * jQuery
    * ------------------------------------------------------------------------
    */
 
+<<<<<<< HEAD
   $__default['default'].fn[NAME] = Alert._jQueryInterface;
   $__default['default'].fn[NAME].Constructor = Alert;
 
   $__default['default'].fn[NAME].noConflict = function () {
     $__default['default'].fn[NAME] = JQUERY_NO_CONFLICT;
+=======
+  $.fn[NAME] = Alert._jQueryInterface;
+  $.fn[NAME].Constructor = Alert;
+
+  $.fn[NAME].noConflict = function () {
+    $.fn[NAME] = JQUERY_NO_CONFLICT;
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     return Alert._jQueryInterface;
   };
 
@@ -390,11 +493,19 @@
    */
 
   var NAME$1 = 'button';
+<<<<<<< HEAD
   var VERSION$1 = '4.5.3';
   var DATA_KEY$1 = 'bs.button';
   var EVENT_KEY$1 = "." + DATA_KEY$1;
   var DATA_API_KEY$1 = '.data-api';
   var JQUERY_NO_CONFLICT$1 = $__default['default'].fn[NAME$1];
+=======
+  var VERSION$1 = '4.5.2';
+  var DATA_KEY$1 = 'bs.button';
+  var EVENT_KEY$1 = "." + DATA_KEY$1;
+  var DATA_API_KEY$1 = '.data-api';
+  var JQUERY_NO_CONFLICT$1 = $.fn[NAME$1];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   var CLASS_NAME_ACTIVE = 'active';
   var CLASS_NAME_BUTTON = 'btn';
   var CLASS_NAME_FOCUS = 'focus';
@@ -417,7 +528,10 @@
   var Button = /*#__PURE__*/function () {
     function Button(element) {
       this._element = element;
+<<<<<<< HEAD
       this.shouldAvoidTriggerChange = false;
+=======
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     } // Getters
 
 
@@ -427,7 +541,11 @@
     _proto.toggle = function toggle() {
       var triggerChangeEvent = true;
       var addAriaPressed = true;
+<<<<<<< HEAD
       var rootElement = $__default['default'](this._element).closest(SELECTOR_DATA_TOGGLES)[0];
+=======
+      var rootElement = $(this._element).closest(SELECTOR_DATA_TOGGLES)[0];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (rootElement) {
         var input = this._element.querySelector(SELECTOR_INPUT);
@@ -440,7 +558,11 @@
               var activeElement = rootElement.querySelector(SELECTOR_ACTIVE);
 
               if (activeElement) {
+<<<<<<< HEAD
                 $__default['default'](activeElement).removeClass(CLASS_NAME_ACTIVE);
+=======
+                $(activeElement).removeClass(CLASS_NAME_ACTIVE);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
               }
             }
           }
@@ -451,9 +573,13 @@
               input.checked = !this._element.classList.contains(CLASS_NAME_ACTIVE);
             }
 
+<<<<<<< HEAD
             if (!this.shouldAvoidTriggerChange) {
               $__default['default'](input).trigger('change');
             }
+=======
+            $(input).trigger('change');
+>>>>>>> 22bb7e5... bootstrap and font awesome added
           }
 
           input.focus();
@@ -467,17 +593,26 @@
         }
 
         if (triggerChangeEvent) {
+<<<<<<< HEAD
           $__default['default'](this._element).toggleClass(CLASS_NAME_ACTIVE);
+=======
+          $(this._element).toggleClass(CLASS_NAME_ACTIVE);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
       }
     };
 
     _proto.dispose = function dispose() {
+<<<<<<< HEAD
       $__default['default'].removeData(this._element, DATA_KEY$1);
+=======
+      $.removeData(this._element, DATA_KEY$1);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       this._element = null;
     } // Static
     ;
 
+<<<<<<< HEAD
     Button._jQueryInterface = function _jQueryInterface(config, avoidTriggerChange) {
       return this.each(function () {
         var $element = $__default['default'](this);
@@ -490,6 +625,17 @@
 
         data.shouldAvoidTriggerChange = avoidTriggerChange;
 
+=======
+    Button._jQueryInterface = function _jQueryInterface(config) {
+      return this.each(function () {
+        var data = $(this).data(DATA_KEY$1);
+
+        if (!data) {
+          data = new Button(this);
+          $(this).data(DATA_KEY$1, data);
+        }
+
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         if (config === 'toggle') {
           data[config]();
         }
@@ -512,12 +658,21 @@
    */
 
 
+<<<<<<< HEAD
   $__default['default'](document).on(EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE_CARROT, function (event) {
     var button = event.target;
     var initialButton = button;
 
     if (!$__default['default'](button).hasClass(CLASS_NAME_BUTTON)) {
       button = $__default['default'](button).closest(SELECTOR_BUTTON)[0];
+=======
+  $(document).on(EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE_CARROT, function (event) {
+    var button = event.target;
+    var initialButton = button;
+
+    if (!$(button).hasClass(CLASS_NAME_BUTTON)) {
+      button = $(button).closest(SELECTOR_BUTTON)[0];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     }
 
     if (!button || button.hasAttribute('disabled') || button.classList.contains('disabled')) {
@@ -531,6 +686,7 @@
         return;
       }
 
+<<<<<<< HEAD
       if (initialButton.tagName === 'INPUT' || button.tagName !== 'LABEL') {
         Button._jQueryInterface.call($__default['default'](button), 'toggle', initialButton.tagName === 'INPUT');
       }
@@ -540,6 +696,17 @@
     $__default['default'](button).toggleClass(CLASS_NAME_FOCUS, /^focus(in)?$/.test(event.type));
   });
   $__default['default'](window).on(EVENT_LOAD_DATA_API, function () {
+=======
+      if (initialButton.tagName !== 'LABEL' || inputBtn && inputBtn.type !== 'checkbox') {
+        Button._jQueryInterface.call($(button), 'toggle');
+      }
+    }
+  }).on(EVENT_FOCUS_BLUR_DATA_API, SELECTOR_DATA_TOGGLE_CARROT, function (event) {
+    var button = $(event.target).closest(SELECTOR_BUTTON)[0];
+    $(button).toggleClass(CLASS_NAME_FOCUS, /^focus(in)?$/.test(event.type));
+  });
+  $(window).on(EVENT_LOAD_DATA_API, function () {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     // ensure correct active class is set to match the controls' actual values/states
     // find all checkboxes/readio buttons inside data-toggle groups
     var buttons = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLES_BUTTONS));
@@ -574,11 +741,19 @@
    * ------------------------------------------------------------------------
    */
 
+<<<<<<< HEAD
   $__default['default'].fn[NAME$1] = Button._jQueryInterface;
   $__default['default'].fn[NAME$1].Constructor = Button;
 
   $__default['default'].fn[NAME$1].noConflict = function () {
     $__default['default'].fn[NAME$1] = JQUERY_NO_CONFLICT$1;
+=======
+  $.fn[NAME$1] = Button._jQueryInterface;
+  $.fn[NAME$1].Constructor = Button;
+
+  $.fn[NAME$1].noConflict = function () {
+    $.fn[NAME$1] = JQUERY_NO_CONFLICT$1;
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     return Button._jQueryInterface;
   };
 
@@ -589,11 +764,19 @@
    */
 
   var NAME$2 = 'carousel';
+<<<<<<< HEAD
   var VERSION$2 = '4.5.3';
   var DATA_KEY$2 = 'bs.carousel';
   var EVENT_KEY$2 = "." + DATA_KEY$2;
   var DATA_API_KEY$2 = '.data-api';
   var JQUERY_NO_CONFLICT$2 = $__default['default'].fn[NAME$2];
+=======
+  var VERSION$2 = '4.5.2';
+  var DATA_KEY$2 = 'bs.carousel';
+  var EVENT_KEY$2 = "." + DATA_KEY$2;
+  var DATA_API_KEY$2 = '.data-api';
+  var JQUERY_NO_CONFLICT$2 = $.fn[NAME$2];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
 
   var ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which value for right arrow key
@@ -690,10 +873,16 @@
     };
 
     _proto.nextWhenVisible = function nextWhenVisible() {
+<<<<<<< HEAD
       var $element = $__default['default'](this._element); // Don't call next when the page isn't visible
       // or the carousel or its parent isn't visible
 
       if (!document.hidden && $element.is(':visible') && $element.css('visibility') !== 'hidden') {
+=======
+      // Don't call next when the page isn't visible
+      // or the carousel or its parent isn't visible
+      if (!document.hidden && $(this._element).is(':visible') && $(this._element).css('visibility') !== 'hidden') {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         this.next();
       }
     };
@@ -745,7 +934,11 @@
       }
 
       if (this._isSliding) {
+<<<<<<< HEAD
         $__default['default'](this._element).one(EVENT_SLID, function () {
+=======
+        $(this._element).one(EVENT_SLID, function () {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
           return _this.to(index);
         });
         return;
@@ -763,8 +956,13 @@
     };
 
     _proto.dispose = function dispose() {
+<<<<<<< HEAD
       $__default['default'](this._element).off(EVENT_KEY$2);
       $__default['default'].removeData(this._element, DATA_KEY$2);
+=======
+      $(this._element).off(EVENT_KEY$2);
+      $.removeData(this._element, DATA_KEY$2);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       this._items = null;
       this._config = null;
       this._element = null;
@@ -806,13 +1004,21 @@
       var _this2 = this;
 
       if (this._config.keyboard) {
+<<<<<<< HEAD
         $__default['default'](this._element).on(EVENT_KEYDOWN, function (event) {
+=======
+        $(this._element).on(EVENT_KEYDOWN, function (event) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
           return _this2._keydown(event);
         });
       }
 
       if (this._config.pause === 'hover') {
+<<<<<<< HEAD
         $__default['default'](this._element).on(EVENT_MOUSEENTER, function (event) {
+=======
+        $(this._element).on(EVENT_MOUSEENTER, function (event) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
           return _this2.pause(event);
         }).on(EVENT_MOUSELEAVE, function (event) {
           return _this2.cycle(event);
@@ -875,20 +1081,32 @@
         }
       };
 
+<<<<<<< HEAD
       $__default['default'](this._element.querySelectorAll(SELECTOR_ITEM_IMG)).on(EVENT_DRAG_START, function (e) {
+=======
+      $(this._element.querySelectorAll(SELECTOR_ITEM_IMG)).on(EVENT_DRAG_START, function (e) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         return e.preventDefault();
       });
 
       if (this._pointerEvent) {
+<<<<<<< HEAD
         $__default['default'](this._element).on(EVENT_POINTERDOWN, function (event) {
           return start(event);
         });
         $__default['default'](this._element).on(EVENT_POINTERUP, function (event) {
+=======
+        $(this._element).on(EVENT_POINTERDOWN, function (event) {
+          return start(event);
+        });
+        $(this._element).on(EVENT_POINTERUP, function (event) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
           return end(event);
         });
 
         this._element.classList.add(CLASS_NAME_POINTER_EVENT);
       } else {
+<<<<<<< HEAD
         $__default['default'](this._element).on(EVENT_TOUCHSTART, function (event) {
           return start(event);
         });
@@ -896,6 +1114,15 @@
           return move(event);
         });
         $__default['default'](this._element).on(EVENT_TOUCHEND, function (event) {
+=======
+        $(this._element).on(EVENT_TOUCHSTART, function (event) {
+          return start(event);
+        });
+        $(this._element).on(EVENT_TOUCHMOVE, function (event) {
+          return move(event);
+        });
+        $(this._element).on(EVENT_TOUCHEND, function (event) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
           return end(event);
         });
       }
@@ -947,25 +1174,41 @@
 
       var fromIndex = this._getItemIndex(this._element.querySelector(SELECTOR_ACTIVE_ITEM));
 
+<<<<<<< HEAD
       var slideEvent = $__default['default'].Event(EVENT_SLIDE, {
+=======
+      var slideEvent = $.Event(EVENT_SLIDE, {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         relatedTarget: relatedTarget,
         direction: eventDirectionName,
         from: fromIndex,
         to: targetIndex
       });
+<<<<<<< HEAD
       $__default['default'](this._element).trigger(slideEvent);
+=======
+      $(this._element).trigger(slideEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       return slideEvent;
     };
 
     _proto._setActiveIndicatorElement = function _setActiveIndicatorElement(element) {
       if (this._indicatorsElement) {
         var indicators = [].slice.call(this._indicatorsElement.querySelectorAll(SELECTOR_ACTIVE$1));
+<<<<<<< HEAD
         $__default['default'](indicators).removeClass(CLASS_NAME_ACTIVE$1);
+=======
+        $(indicators).removeClass(CLASS_NAME_ACTIVE$1);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
         var nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
 
         if (nextIndicator) {
+<<<<<<< HEAD
           $__default['default'](nextIndicator).addClass(CLASS_NAME_ACTIVE$1);
+=======
+          $(nextIndicator).addClass(CLASS_NAME_ACTIVE$1);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
       }
     };
@@ -996,7 +1239,11 @@
         eventDirectionName = DIRECTION_RIGHT;
       }
 
+<<<<<<< HEAD
       if (nextElement && $__default['default'](nextElement).hasClass(CLASS_NAME_ACTIVE$1)) {
+=======
+      if (nextElement && $(nextElement).hasClass(CLASS_NAME_ACTIVE$1)) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         this._isSliding = false;
         return;
       }
@@ -1020,18 +1267,30 @@
 
       this._setActiveIndicatorElement(nextElement);
 
+<<<<<<< HEAD
       var slidEvent = $__default['default'].Event(EVENT_SLID, {
+=======
+      var slidEvent = $.Event(EVENT_SLID, {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         relatedTarget: nextElement,
         direction: eventDirectionName,
         from: activeElementIndex,
         to: nextElementIndex
       });
 
+<<<<<<< HEAD
       if ($__default['default'](this._element).hasClass(CLASS_NAME_SLIDE)) {
         $__default['default'](nextElement).addClass(orderClassName);
         Util.reflow(nextElement);
         $__default['default'](activeElement).addClass(directionalClassName);
         $__default['default'](nextElement).addClass(directionalClassName);
+=======
+      if ($(this._element).hasClass(CLASS_NAME_SLIDE)) {
+        $(nextElement).addClass(orderClassName);
+        Util.reflow(nextElement);
+        $(activeElement).addClass(directionalClassName);
+        $(nextElement).addClass(directionalClassName);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         var nextElementInterval = parseInt(nextElement.getAttribute('data-interval'), 10);
 
         if (nextElementInterval) {
@@ -1042,6 +1301,7 @@
         }
 
         var transitionDuration = Util.getTransitionDurationFromElement(activeElement);
+<<<<<<< HEAD
         $__default['default'](activeElement).one(Util.TRANSITION_END, function () {
           $__default['default'](nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(CLASS_NAME_ACTIVE$1);
           $__default['default'](activeElement).removeClass(CLASS_NAME_ACTIVE$1 + " " + orderClassName + " " + directionalClassName);
@@ -1055,6 +1315,21 @@
         $__default['default'](nextElement).addClass(CLASS_NAME_ACTIVE$1);
         this._isSliding = false;
         $__default['default'](this._element).trigger(slidEvent);
+=======
+        $(activeElement).one(Util.TRANSITION_END, function () {
+          $(nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(CLASS_NAME_ACTIVE$1);
+          $(activeElement).removeClass(CLASS_NAME_ACTIVE$1 + " " + orderClassName + " " + directionalClassName);
+          _this4._isSliding = false;
+          setTimeout(function () {
+            return $(_this4._element).trigger(slidEvent);
+          }, 0);
+        }).emulateTransitionEnd(transitionDuration);
+      } else {
+        $(activeElement).removeClass(CLASS_NAME_ACTIVE$1);
+        $(nextElement).addClass(CLASS_NAME_ACTIVE$1);
+        this._isSliding = false;
+        $(this._element).trigger(slidEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       }
 
       if (isCycling) {
@@ -1065,9 +1340,15 @@
 
     Carousel._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
+<<<<<<< HEAD
         var data = $__default['default'](this).data(DATA_KEY$2);
 
         var _config = _extends({}, Default, $__default['default'](this).data());
+=======
+        var data = $(this).data(DATA_KEY$2);
+
+        var _config = _extends({}, Default, $(this).data());
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
         if (typeof config === 'object') {
           _config = _extends({}, _config, config);
@@ -1077,7 +1358,11 @@
 
         if (!data) {
           data = new Carousel(this, _config);
+<<<<<<< HEAD
           $__default['default'](this).data(DATA_KEY$2, data);
+=======
+          $(this).data(DATA_KEY$2, data);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         if (typeof config === 'number') {
@@ -1102,6 +1387,7 @@
         return;
       }
 
+<<<<<<< HEAD
       var target = $__default['default'](selector)[0];
 
       if (!target || !$__default['default'](target).hasClass(CLASS_NAME_CAROUSEL)) {
@@ -1109,6 +1395,15 @@
       }
 
       var config = _extends({}, $__default['default'](target).data(), $__default['default'](this).data());
+=======
+      var target = $(selector)[0];
+
+      if (!target || !$(target).hasClass(CLASS_NAME_CAROUSEL)) {
+        return;
+      }
+
+      var config = _extends({}, $(target).data(), $(this).data());
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       var slideIndex = this.getAttribute('data-slide-to');
 
@@ -1116,10 +1411,17 @@
         config.interval = false;
       }
 
+<<<<<<< HEAD
       Carousel._jQueryInterface.call($__default['default'](target), config);
 
       if (slideIndex) {
         $__default['default'](target).data(DATA_KEY$2).to(slideIndex);
+=======
+      Carousel._jQueryInterface.call($(target), config);
+
+      if (slideIndex) {
+        $(target).data(DATA_KEY$2).to(slideIndex);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       }
 
       event.preventDefault();
@@ -1146,12 +1448,21 @@
    */
 
 
+<<<<<<< HEAD
   $__default['default'](document).on(EVENT_CLICK_DATA_API$2, SELECTOR_DATA_SLIDE, Carousel._dataApiClickHandler);
   $__default['default'](window).on(EVENT_LOAD_DATA_API$1, function () {
     var carousels = [].slice.call(document.querySelectorAll(SELECTOR_DATA_RIDE));
 
     for (var i = 0, len = carousels.length; i < len; i++) {
       var $carousel = $__default['default'](carousels[i]);
+=======
+  $(document).on(EVENT_CLICK_DATA_API$2, SELECTOR_DATA_SLIDE, Carousel._dataApiClickHandler);
+  $(window).on(EVENT_LOAD_DATA_API$1, function () {
+    var carousels = [].slice.call(document.querySelectorAll(SELECTOR_DATA_RIDE));
+
+    for (var i = 0, len = carousels.length; i < len; i++) {
+      var $carousel = $(carousels[i]);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       Carousel._jQueryInterface.call($carousel, $carousel.data());
     }
@@ -1162,11 +1473,19 @@
    * ------------------------------------------------------------------------
    */
 
+<<<<<<< HEAD
   $__default['default'].fn[NAME$2] = Carousel._jQueryInterface;
   $__default['default'].fn[NAME$2].Constructor = Carousel;
 
   $__default['default'].fn[NAME$2].noConflict = function () {
     $__default['default'].fn[NAME$2] = JQUERY_NO_CONFLICT$2;
+=======
+  $.fn[NAME$2] = Carousel._jQueryInterface;
+  $.fn[NAME$2].Constructor = Carousel;
+
+  $.fn[NAME$2].noConflict = function () {
+    $.fn[NAME$2] = JQUERY_NO_CONFLICT$2;
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     return Carousel._jQueryInterface;
   };
 
@@ -1177,11 +1496,19 @@
    */
 
   var NAME$3 = 'collapse';
+<<<<<<< HEAD
   var VERSION$3 = '4.5.3';
   var DATA_KEY$3 = 'bs.collapse';
   var EVENT_KEY$3 = "." + DATA_KEY$3;
   var DATA_API_KEY$3 = '.data-api';
   var JQUERY_NO_CONFLICT$3 = $__default['default'].fn[NAME$3];
+=======
+  var VERSION$3 = '4.5.2';
+  var DATA_KEY$3 = 'bs.collapse';
+  var EVENT_KEY$3 = "." + DATA_KEY$3;
+  var DATA_API_KEY$3 = '.data-api';
+  var JQUERY_NO_CONFLICT$3 = $.fn[NAME$3];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   var Default$1 = {
     toggle: true,
     parent: ''
@@ -1247,7 +1574,11 @@
 
     // Public
     _proto.toggle = function toggle() {
+<<<<<<< HEAD
       if ($__default['default'](this._element).hasClass(CLASS_NAME_SHOW$1)) {
+=======
+      if ($(this._element).hasClass(CLASS_NAME_SHOW$1)) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         this.hide();
       } else {
         this.show();
@@ -1257,7 +1588,11 @@
     _proto.show = function show() {
       var _this = this;
 
+<<<<<<< HEAD
       if (this._isTransitioning || $__default['default'](this._element).hasClass(CLASS_NAME_SHOW$1)) {
+=======
+      if (this._isTransitioning || $(this._element).hasClass(CLASS_NAME_SHOW$1)) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         return;
       }
 
@@ -1279,64 +1614,109 @@
       }
 
       if (actives) {
+<<<<<<< HEAD
         activesData = $__default['default'](actives).not(this._selector).data(DATA_KEY$3);
+=======
+        activesData = $(actives).not(this._selector).data(DATA_KEY$3);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
         if (activesData && activesData._isTransitioning) {
           return;
         }
       }
 
+<<<<<<< HEAD
       var startEvent = $__default['default'].Event(EVENT_SHOW);
       $__default['default'](this._element).trigger(startEvent);
+=======
+      var startEvent = $.Event(EVENT_SHOW);
+      $(this._element).trigger(startEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (startEvent.isDefaultPrevented()) {
         return;
       }
 
       if (actives) {
+<<<<<<< HEAD
         Collapse._jQueryInterface.call($__default['default'](actives).not(this._selector), 'hide');
 
         if (!activesData) {
           $__default['default'](actives).data(DATA_KEY$3, null);
+=======
+        Collapse._jQueryInterface.call($(actives).not(this._selector), 'hide');
+
+        if (!activesData) {
+          $(actives).data(DATA_KEY$3, null);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
       }
 
       var dimension = this._getDimension();
 
+<<<<<<< HEAD
       $__default['default'](this._element).removeClass(CLASS_NAME_COLLAPSE).addClass(CLASS_NAME_COLLAPSING);
       this._element.style[dimension] = 0;
 
       if (this._triggerArray.length) {
         $__default['default'](this._triggerArray).removeClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', true);
+=======
+      $(this._element).removeClass(CLASS_NAME_COLLAPSE).addClass(CLASS_NAME_COLLAPSING);
+      this._element.style[dimension] = 0;
+
+      if (this._triggerArray.length) {
+        $(this._triggerArray).removeClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', true);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       }
 
       this.setTransitioning(true);
 
       var complete = function complete() {
+<<<<<<< HEAD
         $__default['default'](_this._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW$1);
+=======
+        $(_this._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW$1);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         _this._element.style[dimension] = '';
 
         _this.setTransitioning(false);
 
+<<<<<<< HEAD
         $__default['default'](_this._element).trigger(EVENT_SHOWN);
+=======
+        $(_this._element).trigger(EVENT_SHOWN);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       };
 
       var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
       var scrollSize = "scroll" + capitalizedDimension;
       var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+<<<<<<< HEAD
       $__default['default'](this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+=======
+      $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       this._element.style[dimension] = this._element[scrollSize] + "px";
     };
 
     _proto.hide = function hide() {
       var _this2 = this;
 
+<<<<<<< HEAD
       if (this._isTransitioning || !$__default['default'](this._element).hasClass(CLASS_NAME_SHOW$1)) {
         return;
       }
 
       var startEvent = $__default['default'].Event(EVENT_HIDE);
       $__default['default'](this._element).trigger(startEvent);
+=======
+      if (this._isTransitioning || !$(this._element).hasClass(CLASS_NAME_SHOW$1)) {
+        return;
+      }
+
+      var startEvent = $.Event(EVENT_HIDE);
+      $(this._element).trigger(startEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (startEvent.isDefaultPrevented()) {
         return;
@@ -1346,7 +1726,11 @@
 
       this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
       Util.reflow(this._element);
+<<<<<<< HEAD
       $__default['default'](this._element).addClass(CLASS_NAME_COLLAPSING).removeClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW$1);
+=======
+      $(this._element).addClass(CLASS_NAME_COLLAPSING).removeClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW$1);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       var triggerArrayLength = this._triggerArray.length;
 
       if (triggerArrayLength > 0) {
@@ -1355,10 +1739,17 @@
           var selector = Util.getSelectorFromElement(trigger);
 
           if (selector !== null) {
+<<<<<<< HEAD
             var $elem = $__default['default']([].slice.call(document.querySelectorAll(selector)));
 
             if (!$elem.hasClass(CLASS_NAME_SHOW$1)) {
               $__default['default'](trigger).addClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', false);
+=======
+            var $elem = $([].slice.call(document.querySelectorAll(selector)));
+
+            if (!$elem.hasClass(CLASS_NAME_SHOW$1)) {
+              $(trigger).addClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', false);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
             }
           }
         }
@@ -1369,12 +1760,20 @@
       var complete = function complete() {
         _this2.setTransitioning(false);
 
+<<<<<<< HEAD
         $__default['default'](_this2._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE).trigger(EVENT_HIDDEN);
+=======
+        $(_this2._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE).trigger(EVENT_HIDDEN);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       };
 
       this._element.style[dimension] = '';
       var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+<<<<<<< HEAD
       $__default['default'](this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+=======
+      $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     };
 
     _proto.setTransitioning = function setTransitioning(isTransitioning) {
@@ -1382,7 +1781,11 @@
     };
 
     _proto.dispose = function dispose() {
+<<<<<<< HEAD
       $__default['default'].removeData(this._element, DATA_KEY$3);
+=======
+      $.removeData(this._element, DATA_KEY$3);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       this._config = null;
       this._parent = null;
       this._element = null;
@@ -1400,7 +1803,11 @@
     };
 
     _proto._getDimension = function _getDimension() {
+<<<<<<< HEAD
       var hasWidth = $__default['default'](this._element).hasClass(DIMENSION_WIDTH);
+=======
+      var hasWidth = $(this._element).hasClass(DIMENSION_WIDTH);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       return hasWidth ? DIMENSION_WIDTH : DIMENSION_HEIGHT;
     };
 
@@ -1421,17 +1828,28 @@
 
       var selector = "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]";
       var children = [].slice.call(parent.querySelectorAll(selector));
+<<<<<<< HEAD
       $__default['default'](children).each(function (i, element) {
+=======
+      $(children).each(function (i, element) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         _this3._addAriaAndCollapsedClass(Collapse._getTargetFromElement(element), [element]);
       });
       return parent;
     };
 
     _proto._addAriaAndCollapsedClass = function _addAriaAndCollapsedClass(element, triggerArray) {
+<<<<<<< HEAD
       var isOpen = $__default['default'](element).hasClass(CLASS_NAME_SHOW$1);
 
       if (triggerArray.length) {
         $__default['default'](triggerArray).toggleClass(CLASS_NAME_COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
+=======
+      var isOpen = $(element).hasClass(CLASS_NAME_SHOW$1);
+
+      if (triggerArray.length) {
+        $(triggerArray).toggleClass(CLASS_NAME_COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       }
     } // Static
     ;
@@ -1443,10 +1861,17 @@
 
     Collapse._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
+<<<<<<< HEAD
         var $element = $__default['default'](this);
         var data = $element.data(DATA_KEY$3);
 
         var _config = _extends({}, Default$1, $element.data(), typeof config === 'object' && config ? config : {});
+=======
+        var $this = $(this);
+        var data = $this.data(DATA_KEY$3);
+
+        var _config = _extends({}, Default$1, $this.data(), typeof config === 'object' && config ? config : {});
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
         if (!data && _config.toggle && typeof config === 'string' && /show|hide/.test(config)) {
           _config.toggle = false;
@@ -1454,7 +1879,11 @@
 
         if (!data) {
           data = new Collapse(this, _config);
+<<<<<<< HEAD
           $element.data(DATA_KEY$3, data);
+=======
+          $this.data(DATA_KEY$3, data);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         if (typeof config === 'string') {
@@ -1488,17 +1917,29 @@
    */
 
 
+<<<<<<< HEAD
   $__default['default'](document).on(EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$1, function (event) {
+=======
+  $(document).on(EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$1, function (event) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
     if (event.currentTarget.tagName === 'A') {
       event.preventDefault();
     }
 
+<<<<<<< HEAD
     var $trigger = $__default['default'](this);
     var selector = Util.getSelectorFromElement(this);
     var selectors = [].slice.call(document.querySelectorAll(selector));
     $__default['default'](selectors).each(function () {
       var $target = $__default['default'](this);
+=======
+    var $trigger = $(this);
+    var selector = Util.getSelectorFromElement(this);
+    var selectors = [].slice.call(document.querySelectorAll(selector));
+    $(selectors).each(function () {
+      var $target = $(this);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       var data = $target.data(DATA_KEY$3);
       var config = data ? 'toggle' : $trigger.data();
 
@@ -1511,11 +1952,19 @@
    * ------------------------------------------------------------------------
    */
 
+<<<<<<< HEAD
   $__default['default'].fn[NAME$3] = Collapse._jQueryInterface;
   $__default['default'].fn[NAME$3].Constructor = Collapse;
 
   $__default['default'].fn[NAME$3].noConflict = function () {
     $__default['default'].fn[NAME$3] = JQUERY_NO_CONFLICT$3;
+=======
+  $.fn[NAME$3] = Collapse._jQueryInterface;
+  $.fn[NAME$3].Constructor = Collapse;
+
+  $.fn[NAME$3].noConflict = function () {
+    $.fn[NAME$3] = JQUERY_NO_CONFLICT$3;
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     return Collapse._jQueryInterface;
   };
 
@@ -4140,11 +4589,19 @@
    */
 
   var NAME$4 = 'dropdown';
+<<<<<<< HEAD
   var VERSION$4 = '4.5.3';
   var DATA_KEY$4 = 'bs.dropdown';
   var EVENT_KEY$4 = "." + DATA_KEY$4;
   var DATA_API_KEY$4 = '.data-api';
   var JQUERY_NO_CONFLICT$4 = $__default['default'].fn[NAME$4];
+=======
+  var VERSION$4 = '4.5.2';
+  var DATA_KEY$4 = 'bs.dropdown';
+  var EVENT_KEY$4 = "." + DATA_KEY$4;
+  var DATA_API_KEY$4 = '.data-api';
+  var JQUERY_NO_CONFLICT$4 = $.fn[NAME$4];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
 
   var SPACE_KEYCODE = 32; // KeyboardEvent.which value for space key
@@ -4222,11 +4679,19 @@
 
     // Public
     _proto.toggle = function toggle() {
+<<<<<<< HEAD
       if (this._element.disabled || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED)) {
         return;
       }
 
       var isActive = $__default['default'](this._menu).hasClass(CLASS_NAME_SHOW$2);
+=======
+      if (this._element.disabled || $(this._element).hasClass(CLASS_NAME_DISABLED)) {
+        return;
+      }
+
+      var isActive = $(this._menu).hasClass(CLASS_NAME_SHOW$2);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       Dropdown._clearMenus();
 
@@ -4242,18 +4707,30 @@
         usePopper = false;
       }
 
+<<<<<<< HEAD
       if (this._element.disabled || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED) || $__default['default'](this._menu).hasClass(CLASS_NAME_SHOW$2)) {
+=======
+      if (this._element.disabled || $(this._element).hasClass(CLASS_NAME_DISABLED) || $(this._menu).hasClass(CLASS_NAME_SHOW$2)) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         return;
       }
 
       var relatedTarget = {
         relatedTarget: this._element
       };
+<<<<<<< HEAD
       var showEvent = $__default['default'].Event(EVENT_SHOW$1, relatedTarget);
 
       var parent = Dropdown._getParentFromElement(this._element);
 
       $__default['default'](parent).trigger(showEvent);
+=======
+      var showEvent = $.Event(EVENT_SHOW$1, relatedTarget);
+
+      var parent = Dropdown._getParentFromElement(this._element);
+
+      $(parent).trigger(showEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (showEvent.isDefaultPrevented()) {
         return;
@@ -4285,7 +4762,11 @@
 
 
         if (this._config.boundary !== 'scrollParent') {
+<<<<<<< HEAD
           $__default['default'](parent).addClass(CLASS_NAME_POSITION_STATIC);
+=======
+          $(parent).addClass(CLASS_NAME_POSITION_STATIC);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         this._popper = new Popper(referenceElement, this._menu, this._getPopperConfig());
@@ -4295,31 +4776,53 @@
       // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
 
 
+<<<<<<< HEAD
       if ('ontouchstart' in document.documentElement && $__default['default'](parent).closest(SELECTOR_NAVBAR_NAV).length === 0) {
         $__default['default'](document.body).children().on('mouseover', null, $__default['default'].noop);
+=======
+      if ('ontouchstart' in document.documentElement && $(parent).closest(SELECTOR_NAVBAR_NAV).length === 0) {
+        $(document.body).children().on('mouseover', null, $.noop);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       }
 
       this._element.focus();
 
       this._element.setAttribute('aria-expanded', true);
 
+<<<<<<< HEAD
       $__default['default'](this._menu).toggleClass(CLASS_NAME_SHOW$2);
       $__default['default'](parent).toggleClass(CLASS_NAME_SHOW$2).trigger($__default['default'].Event(EVENT_SHOWN$1, relatedTarget));
     };
 
     _proto.hide = function hide() {
       if (this._element.disabled || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED) || !$__default['default'](this._menu).hasClass(CLASS_NAME_SHOW$2)) {
+=======
+      $(this._menu).toggleClass(CLASS_NAME_SHOW$2);
+      $(parent).toggleClass(CLASS_NAME_SHOW$2).trigger($.Event(EVENT_SHOWN$1, relatedTarget));
+    };
+
+    _proto.hide = function hide() {
+      if (this._element.disabled || $(this._element).hasClass(CLASS_NAME_DISABLED) || !$(this._menu).hasClass(CLASS_NAME_SHOW$2)) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         return;
       }
 
       var relatedTarget = {
         relatedTarget: this._element
       };
+<<<<<<< HEAD
       var hideEvent = $__default['default'].Event(EVENT_HIDE$1, relatedTarget);
 
       var parent = Dropdown._getParentFromElement(this._element);
 
       $__default['default'](parent).trigger(hideEvent);
+=======
+      var hideEvent = $.Event(EVENT_HIDE$1, relatedTarget);
+
+      var parent = Dropdown._getParentFromElement(this._element);
+
+      $(parent).trigger(hideEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (hideEvent.isDefaultPrevented()) {
         return;
@@ -4329,6 +4832,7 @@
         this._popper.destroy();
       }
 
+<<<<<<< HEAD
       $__default['default'](this._menu).toggleClass(CLASS_NAME_SHOW$2);
       $__default['default'](parent).toggleClass(CLASS_NAME_SHOW$2).trigger($__default['default'].Event(EVENT_HIDDEN$1, relatedTarget));
     };
@@ -4336,6 +4840,15 @@
     _proto.dispose = function dispose() {
       $__default['default'].removeData(this._element, DATA_KEY$4);
       $__default['default'](this._element).off(EVENT_KEY$4);
+=======
+      $(this._menu).toggleClass(CLASS_NAME_SHOW$2);
+      $(parent).toggleClass(CLASS_NAME_SHOW$2).trigger($.Event(EVENT_HIDDEN$1, relatedTarget));
+    };
+
+    _proto.dispose = function dispose() {
+      $.removeData(this._element, DATA_KEY$4);
+      $(this._element).off(EVENT_KEY$4);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       this._element = null;
       this._menu = null;
 
@@ -4358,7 +4871,11 @@
     _proto._addEventListeners = function _addEventListeners() {
       var _this = this;
 
+<<<<<<< HEAD
       $__default['default'](this._element).on(EVENT_CLICK, function (event) {
+=======
+      $(this._element).on(EVENT_CLICK, function (event) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         event.preventDefault();
         event.stopPropagation();
 
@@ -4367,7 +4884,11 @@
     };
 
     _proto._getConfig = function _getConfig(config) {
+<<<<<<< HEAD
       config = _extends({}, this.constructor.Default, $__default['default'](this._element).data(), config);
+=======
+      config = _extends({}, this.constructor.Default, $(this._element).data(), config);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       Util.typeCheckConfig(NAME$4, config, this.constructor.DefaultType);
       return config;
     };
@@ -4385,16 +4906,28 @@
     };
 
     _proto._getPlacement = function _getPlacement() {
+<<<<<<< HEAD
       var $parentDropdown = $__default['default'](this._element.parentNode);
       var placement = PLACEMENT_BOTTOM; // Handle dropup
 
       if ($parentDropdown.hasClass(CLASS_NAME_DROPUP)) {
         placement = $__default['default'](this._menu).hasClass(CLASS_NAME_MENURIGHT) ? PLACEMENT_TOPEND : PLACEMENT_TOP;
+=======
+      var $parentDropdown = $(this._element.parentNode);
+      var placement = PLACEMENT_BOTTOM; // Handle dropup
+
+      if ($parentDropdown.hasClass(CLASS_NAME_DROPUP)) {
+        placement = $(this._menu).hasClass(CLASS_NAME_MENURIGHT) ? PLACEMENT_TOPEND : PLACEMENT_TOP;
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       } else if ($parentDropdown.hasClass(CLASS_NAME_DROPRIGHT)) {
         placement = PLACEMENT_RIGHT;
       } else if ($parentDropdown.hasClass(CLASS_NAME_DROPLEFT)) {
         placement = PLACEMENT_LEFT;
+<<<<<<< HEAD
       } else if ($__default['default'](this._menu).hasClass(CLASS_NAME_MENURIGHT)) {
+=======
+      } else if ($(this._menu).hasClass(CLASS_NAME_MENURIGHT)) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         placement = PLACEMENT_BOTTOMEND;
       }
 
@@ -4402,7 +4935,11 @@
     };
 
     _proto._detectNavbar = function _detectNavbar() {
+<<<<<<< HEAD
       return $__default['default'](this._element).closest('.navbar').length > 0;
+=======
+      return $(this._element).closest('.navbar').length > 0;
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     };
 
     _proto._getOffset = function _getOffset() {
@@ -4448,13 +4985,21 @@
 
     Dropdown._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
+<<<<<<< HEAD
         var data = $__default['default'](this).data(DATA_KEY$4);
+=======
+        var data = $(this).data(DATA_KEY$4);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
         var _config = typeof config === 'object' ? config : null;
 
         if (!data) {
           data = new Dropdown(this, _config);
+<<<<<<< HEAD
           $__default['default'](this).data(DATA_KEY$4, data);
+=======
+          $(this).data(DATA_KEY$4, data);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         if (typeof config === 'string') {
@@ -4477,7 +5022,11 @@
       for (var i = 0, len = toggles.length; i < len; i++) {
         var parent = Dropdown._getParentFromElement(toggles[i]);
 
+<<<<<<< HEAD
         var context = $__default['default'](toggles[i]).data(DATA_KEY$4);
+=======
+        var context = $(toggles[i]).data(DATA_KEY$4);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         var relatedTarget = {
           relatedTarget: toggles[i]
         };
@@ -4492,6 +5041,7 @@
 
         var dropdownMenu = context._menu;
 
+<<<<<<< HEAD
         if (!$__default['default'](parent).hasClass(CLASS_NAME_SHOW$2)) {
           continue;
         }
@@ -4502,6 +5052,18 @@
 
         var hideEvent = $__default['default'].Event(EVENT_HIDE$1, relatedTarget);
         $__default['default'](parent).trigger(hideEvent);
+=======
+        if (!$(parent).hasClass(CLASS_NAME_SHOW$2)) {
+          continue;
+        }
+
+        if (event && (event.type === 'click' && /input|textarea/i.test(event.target.tagName) || event.type === 'keyup' && event.which === TAB_KEYCODE) && $.contains(parent, event.target)) {
+          continue;
+        }
+
+        var hideEvent = $.Event(EVENT_HIDE$1, relatedTarget);
+        $(parent).trigger(hideEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
         if (hideEvent.isDefaultPrevented()) {
           continue;
@@ -4510,7 +5072,11 @@
 
 
         if ('ontouchstart' in document.documentElement) {
+<<<<<<< HEAD
           $__default['default'](document.body).children().off('mouseover', null, $__default['default'].noop);
+=======
+          $(document.body).children().off('mouseover', null, $.noop);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         toggles[i].setAttribute('aria-expanded', 'false');
@@ -4519,8 +5085,13 @@
           context._popper.destroy();
         }
 
+<<<<<<< HEAD
         $__default['default'](dropdownMenu).removeClass(CLASS_NAME_SHOW$2);
         $__default['default'](parent).removeClass(CLASS_NAME_SHOW$2).trigger($__default['default'].Event(EVENT_HIDDEN$1, relatedTarget));
+=======
+        $(dropdownMenu).removeClass(CLASS_NAME_SHOW$2);
+        $(parent).removeClass(CLASS_NAME_SHOW$2).trigger($.Event(EVENT_HIDDEN$1, relatedTarget));
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       }
     };
 
@@ -4544,17 +5115,29 @@
       //  - If key is other than escape
       //    - If key is not up or down => not a dropdown command
       //    - If trigger inside the menu => not a dropdown command
+<<<<<<< HEAD
       if (/input|textarea/i.test(event.target.tagName) ? event.which === SPACE_KEYCODE || event.which !== ESCAPE_KEYCODE && (event.which !== ARROW_DOWN_KEYCODE && event.which !== ARROW_UP_KEYCODE || $__default['default'](event.target).closest(SELECTOR_MENU).length) : !REGEXP_KEYDOWN.test(event.which)) {
         return;
       }
 
       if (this.disabled || $__default['default'](this).hasClass(CLASS_NAME_DISABLED)) {
+=======
+      if (/input|textarea/i.test(event.target.tagName) ? event.which === SPACE_KEYCODE || event.which !== ESCAPE_KEYCODE && (event.which !== ARROW_DOWN_KEYCODE && event.which !== ARROW_UP_KEYCODE || $(event.target).closest(SELECTOR_MENU).length) : !REGEXP_KEYDOWN.test(event.which)) {
+        return;
+      }
+
+      if (this.disabled || $(this).hasClass(CLASS_NAME_DISABLED)) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         return;
       }
 
       var parent = Dropdown._getParentFromElement(this);
 
+<<<<<<< HEAD
       var isActive = $__default['default'](parent).hasClass(CLASS_NAME_SHOW$2);
+=======
+      var isActive = $(parent).hasClass(CLASS_NAME_SHOW$2);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (!isActive && event.which === ESCAPE_KEYCODE) {
         return;
@@ -4563,17 +5146,30 @@
       event.preventDefault();
       event.stopPropagation();
 
+<<<<<<< HEAD
       if (!isActive || event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE) {
         if (event.which === ESCAPE_KEYCODE) {
           $__default['default'](parent.querySelector(SELECTOR_DATA_TOGGLE$2)).trigger('focus');
         }
 
         $__default['default'](this).trigger('click');
+=======
+      if (!isActive || isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
+        if (event.which === ESCAPE_KEYCODE) {
+          $(parent.querySelector(SELECTOR_DATA_TOGGLE$2)).trigger('focus');
+        }
+
+        $(this).trigger('click');
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         return;
       }
 
       var items = [].slice.call(parent.querySelectorAll(SELECTOR_VISIBLE_ITEMS)).filter(function (item) {
+<<<<<<< HEAD
         return $__default['default'](item).is(':visible');
+=======
+        return $(item).is(':visible');
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       });
 
       if (items.length === 0) {
@@ -4625,11 +5221,19 @@
    */
 
 
+<<<<<<< HEAD
   $__default['default'](document).on(EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE$2, Dropdown._dataApiKeydownHandler).on(EVENT_KEYDOWN_DATA_API, SELECTOR_MENU, Dropdown._dataApiKeydownHandler).on(EVENT_CLICK_DATA_API$4 + " " + EVENT_KEYUP_DATA_API, Dropdown._clearMenus).on(EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$2, function (event) {
     event.preventDefault();
     event.stopPropagation();
 
     Dropdown._jQueryInterface.call($__default['default'](this), 'toggle');
+=======
+  $(document).on(EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE$2, Dropdown._dataApiKeydownHandler).on(EVENT_KEYDOWN_DATA_API, SELECTOR_MENU, Dropdown._dataApiKeydownHandler).on(EVENT_CLICK_DATA_API$4 + " " + EVENT_KEYUP_DATA_API, Dropdown._clearMenus).on(EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$2, function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    Dropdown._jQueryInterface.call($(this), 'toggle');
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   }).on(EVENT_CLICK_DATA_API$4, SELECTOR_FORM_CHILD, function (e) {
     e.stopPropagation();
   });
@@ -4639,11 +5243,19 @@
    * ------------------------------------------------------------------------
    */
 
+<<<<<<< HEAD
   $__default['default'].fn[NAME$4] = Dropdown._jQueryInterface;
   $__default['default'].fn[NAME$4].Constructor = Dropdown;
 
   $__default['default'].fn[NAME$4].noConflict = function () {
     $__default['default'].fn[NAME$4] = JQUERY_NO_CONFLICT$4;
+=======
+  $.fn[NAME$4] = Dropdown._jQueryInterface;
+  $.fn[NAME$4].Constructor = Dropdown;
+
+  $.fn[NAME$4].noConflict = function () {
+    $.fn[NAME$4] = JQUERY_NO_CONFLICT$4;
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     return Dropdown._jQueryInterface;
   };
 
@@ -4654,11 +5266,19 @@
    */
 
   var NAME$5 = 'modal';
+<<<<<<< HEAD
   var VERSION$5 = '4.5.3';
   var DATA_KEY$5 = 'bs.modal';
   var EVENT_KEY$5 = "." + DATA_KEY$5;
   var DATA_API_KEY$5 = '.data-api';
   var JQUERY_NO_CONFLICT$5 = $__default['default'].fn[NAME$5];
+=======
+  var VERSION$5 = '4.5.2';
+  var DATA_KEY$5 = 'bs.modal';
+  var EVENT_KEY$5 = "." + DATA_KEY$5;
+  var DATA_API_KEY$5 = '.data-api';
+  var JQUERY_NO_CONFLICT$5 = $.fn[NAME$5];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   var ESCAPE_KEYCODE$1 = 27; // KeyboardEvent.which value for Escape (Esc) key
 
   var Default$3 = {
@@ -4732,6 +5352,7 @@
         return;
       }
 
+<<<<<<< HEAD
       if ($__default['default'](this._element).hasClass(CLASS_NAME_FADE$1)) {
         this._isTransitioning = true;
       }
@@ -4740,6 +5361,16 @@
         relatedTarget: relatedTarget
       });
       $__default['default'](this._element).trigger(showEvent);
+=======
+      if ($(this._element).hasClass(CLASS_NAME_FADE$1)) {
+        this._isTransitioning = true;
+      }
+
+      var showEvent = $.Event(EVENT_SHOW$2, {
+        relatedTarget: relatedTarget
+      });
+      $(this._element).trigger(showEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (this._isShown || showEvent.isDefaultPrevented()) {
         return;
@@ -4757,12 +5388,21 @@
 
       this._setResizeEvent();
 
+<<<<<<< HEAD
       $__default['default'](this._element).on(EVENT_CLICK_DISMISS, SELECTOR_DATA_DISMISS, function (event) {
         return _this.hide(event);
       });
       $__default['default'](this._dialog).on(EVENT_MOUSEDOWN_DISMISS, function () {
         $__default['default'](_this._element).one(EVENT_MOUSEUP_DISMISS, function (event) {
           if ($__default['default'](event.target).is(_this._element)) {
+=======
+      $(this._element).on(EVENT_CLICK_DISMISS, SELECTOR_DATA_DISMISS, function (event) {
+        return _this.hide(event);
+      });
+      $(this._dialog).on(EVENT_MOUSEDOWN_DISMISS, function () {
+        $(_this._element).one(EVENT_MOUSEUP_DISMISS, function (event) {
+          if ($(event.target).is(_this._element)) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
             _this._ignoreBackdropClick = true;
           }
         });
@@ -4784,15 +5424,24 @@
         return;
       }
 
+<<<<<<< HEAD
       var hideEvent = $__default['default'].Event(EVENT_HIDE$2);
       $__default['default'](this._element).trigger(hideEvent);
+=======
+      var hideEvent = $.Event(EVENT_HIDE$2);
+      $(this._element).trigger(hideEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (!this._isShown || hideEvent.isDefaultPrevented()) {
         return;
       }
 
       this._isShown = false;
+<<<<<<< HEAD
       var transition = $__default['default'](this._element).hasClass(CLASS_NAME_FADE$1);
+=======
+      var transition = $(this._element).hasClass(CLASS_NAME_FADE$1);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (transition) {
         this._isTransitioning = true;
@@ -4802,6 +5451,7 @@
 
       this._setResizeEvent();
 
+<<<<<<< HEAD
       $__default['default'](document).off(EVENT_FOCUSIN);
       $__default['default'](this._element).removeClass(CLASS_NAME_SHOW$3);
       $__default['default'](this._element).off(EVENT_CLICK_DISMISS);
@@ -4810,6 +5460,16 @@
       if (transition) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._element);
         $__default['default'](this._element).one(Util.TRANSITION_END, function (event) {
+=======
+      $(document).off(EVENT_FOCUSIN);
+      $(this._element).removeClass(CLASS_NAME_SHOW$3);
+      $(this._element).off(EVENT_CLICK_DISMISS);
+      $(this._dialog).off(EVENT_MOUSEDOWN_DISMISS);
+
+      if (transition) {
+        var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+        $(this._element).one(Util.TRANSITION_END, function (event) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
           return _this2._hideModal(event);
         }).emulateTransitionEnd(transitionDuration);
       } else {
@@ -4819,7 +5479,11 @@
 
     _proto.dispose = function dispose() {
       [window, this._element, this._dialog].forEach(function (htmlElement) {
+<<<<<<< HEAD
         return $__default['default'](htmlElement).off(EVENT_KEY$5);
+=======
+        return $(htmlElement).off(EVENT_KEY$5);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       });
       /**
        * `document` has 2 events `EVENT_FOCUSIN` and `EVENT_CLICK_DATA_API`
@@ -4827,8 +5491,13 @@
        * It will remove `EVENT_CLICK_DATA_API` event that should remain
        */
 
+<<<<<<< HEAD
       $__default['default'](document).off(EVENT_FOCUSIN);
       $__default['default'].removeData(this._element, DATA_KEY$5);
+=======
+      $(document).off(EVENT_FOCUSIN);
+      $.removeData(this._element, DATA_KEY$5);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       this._config = null;
       this._element = null;
       this._dialog = null;
@@ -4855,10 +5524,17 @@
       var _this3 = this;
 
       if (this._config.backdrop === 'static') {
+<<<<<<< HEAD
         var hideEventPrevented = $__default['default'].Event(EVENT_HIDE_PREVENTED);
         $__default['default'](this._element).trigger(hideEventPrevented);
 
         if (hideEventPrevented.isDefaultPrevented()) {
+=======
+        var hideEventPrevented = $.Event(EVENT_HIDE_PREVENTED);
+        $(this._element).trigger(hideEventPrevented);
+
+        if (hideEventPrevented.defaultPrevented) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
           return;
         }
 
@@ -4871,12 +5547,21 @@
         this._element.classList.add(CLASS_NAME_STATIC);
 
         var modalTransitionDuration = Util.getTransitionDurationFromElement(this._dialog);
+<<<<<<< HEAD
         $__default['default'](this._element).off(Util.TRANSITION_END);
         $__default['default'](this._element).one(Util.TRANSITION_END, function () {
           _this3._element.classList.remove(CLASS_NAME_STATIC);
 
           if (!isModalOverflowing) {
             $__default['default'](_this3._element).one(Util.TRANSITION_END, function () {
+=======
+        $(this._element).off(Util.TRANSITION_END);
+        $(this._element).one(Util.TRANSITION_END, function () {
+          _this3._element.classList.remove(CLASS_NAME_STATIC);
+
+          if (!isModalOverflowing) {
+            $(_this3._element).one(Util.TRANSITION_END, function () {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
               _this3._element.style.overflowY = '';
             }).emulateTransitionEnd(_this3._element, modalTransitionDuration);
           }
@@ -4891,7 +5576,11 @@
     _proto._showElement = function _showElement(relatedTarget) {
       var _this4 = this;
 
+<<<<<<< HEAD
       var transition = $__default['default'](this._element).hasClass(CLASS_NAME_FADE$1);
+=======
+      var transition = $(this._element).hasClass(CLASS_NAME_FADE$1);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       var modalBody = this._dialog ? this._dialog.querySelector(SELECTOR_MODAL_BODY) : null;
 
       if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
@@ -4907,7 +5596,11 @@
 
       this._element.setAttribute('role', 'dialog');
 
+<<<<<<< HEAD
       if ($__default['default'](this._dialog).hasClass(CLASS_NAME_SCROLLABLE) && modalBody) {
+=======
+      if ($(this._dialog).hasClass(CLASS_NAME_SCROLLABLE) && modalBody) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         modalBody.scrollTop = 0;
       } else {
         this._element.scrollTop = 0;
@@ -4917,13 +5610,21 @@
         Util.reflow(this._element);
       }
 
+<<<<<<< HEAD
       $__default['default'](this._element).addClass(CLASS_NAME_SHOW$3);
+=======
+      $(this._element).addClass(CLASS_NAME_SHOW$3);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (this._config.focus) {
         this._enforceFocus();
       }
 
+<<<<<<< HEAD
       var shownEvent = $__default['default'].Event(EVENT_SHOWN$2, {
+=======
+      var shownEvent = $.Event(EVENT_SHOWN$2, {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         relatedTarget: relatedTarget
       });
 
@@ -4933,12 +5634,20 @@
         }
 
         _this4._isTransitioning = false;
+<<<<<<< HEAD
         $__default['default'](_this4._element).trigger(shownEvent);
+=======
+        $(_this4._element).trigger(shownEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       };
 
       if (transition) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._dialog);
+<<<<<<< HEAD
         $__default['default'](this._dialog).one(Util.TRANSITION_END, transitionComplete).emulateTransitionEnd(transitionDuration);
+=======
+        $(this._dialog).one(Util.TRANSITION_END, transitionComplete).emulateTransitionEnd(transitionDuration);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       } else {
         transitionComplete();
       }
@@ -4947,9 +5656,15 @@
     _proto._enforceFocus = function _enforceFocus() {
       var _this5 = this;
 
+<<<<<<< HEAD
       $__default['default'](document).off(EVENT_FOCUSIN) // Guard against infinite focus loop
       .on(EVENT_FOCUSIN, function (event) {
         if (document !== event.target && _this5._element !== event.target && $__default['default'](_this5._element).has(event.target).length === 0) {
+=======
+      $(document).off(EVENT_FOCUSIN) // Guard against infinite focus loop
+      .on(EVENT_FOCUSIN, function (event) {
+        if (document !== event.target && _this5._element !== event.target && $(_this5._element).has(event.target).length === 0) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
           _this5._element.focus();
         }
       });
@@ -4959,7 +5674,11 @@
       var _this6 = this;
 
       if (this._isShown) {
+<<<<<<< HEAD
         $__default['default'](this._element).on(EVENT_KEYDOWN_DISMISS, function (event) {
+=======
+        $(this._element).on(EVENT_KEYDOWN_DISMISS, function (event) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
           if (_this6._config.keyboard && event.which === ESCAPE_KEYCODE$1) {
             event.preventDefault();
 
@@ -4969,7 +5688,11 @@
           }
         });
       } else if (!this._isShown) {
+<<<<<<< HEAD
         $__default['default'](this._element).off(EVENT_KEYDOWN_DISMISS);
+=======
+        $(this._element).off(EVENT_KEYDOWN_DISMISS);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       }
     };
 
@@ -4977,11 +5700,19 @@
       var _this7 = this;
 
       if (this._isShown) {
+<<<<<<< HEAD
         $__default['default'](window).on(EVENT_RESIZE, function (event) {
           return _this7.handleUpdate(event);
         });
       } else {
         $__default['default'](window).off(EVENT_RESIZE);
+=======
+        $(window).on(EVENT_RESIZE, function (event) {
+          return _this7.handleUpdate(event);
+        });
+      } else {
+        $(window).off(EVENT_RESIZE);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       }
     };
 
@@ -4999,19 +5730,31 @@
       this._isTransitioning = false;
 
       this._showBackdrop(function () {
+<<<<<<< HEAD
         $__default['default'](document.body).removeClass(CLASS_NAME_OPEN);
+=======
+        $(document.body).removeClass(CLASS_NAME_OPEN);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
         _this8._resetAdjustments();
 
         _this8._resetScrollbar();
 
+<<<<<<< HEAD
         $__default['default'](_this8._element).trigger(EVENT_HIDDEN$2);
+=======
+        $(_this8._element).trigger(EVENT_HIDDEN$2);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       });
     };
 
     _proto._removeBackdrop = function _removeBackdrop() {
       if (this._backdrop) {
+<<<<<<< HEAD
         $__default['default'](this._backdrop).remove();
+=======
+        $(this._backdrop).remove();
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         this._backdrop = null;
       }
     };
@@ -5019,7 +5762,11 @@
     _proto._showBackdrop = function _showBackdrop(callback) {
       var _this9 = this;
 
+<<<<<<< HEAD
       var animate = $__default['default'](this._element).hasClass(CLASS_NAME_FADE$1) ? CLASS_NAME_FADE$1 : '';
+=======
+      var animate = $(this._element).hasClass(CLASS_NAME_FADE$1) ? CLASS_NAME_FADE$1 : '';
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (this._isShown && this._config.backdrop) {
         this._backdrop = document.createElement('div');
@@ -5029,8 +5776,13 @@
           this._backdrop.classList.add(animate);
         }
 
+<<<<<<< HEAD
         $__default['default'](this._backdrop).appendTo(document.body);
         $__default['default'](this._element).on(EVENT_CLICK_DISMISS, function (event) {
+=======
+        $(this._backdrop).appendTo(document.body);
+        $(this._element).on(EVENT_CLICK_DISMISS, function (event) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
           if (_this9._ignoreBackdropClick) {
             _this9._ignoreBackdropClick = false;
             return;
@@ -5047,7 +5799,11 @@
           Util.reflow(this._backdrop);
         }
 
+<<<<<<< HEAD
         $__default['default'](this._backdrop).addClass(CLASS_NAME_SHOW$3);
+=======
+        $(this._backdrop).addClass(CLASS_NAME_SHOW$3);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
         if (!callback) {
           return;
@@ -5059,9 +5815,15 @@
         }
 
         var backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
+<<<<<<< HEAD
         $__default['default'](this._backdrop).one(Util.TRANSITION_END, callback).emulateTransitionEnd(backdropTransitionDuration);
       } else if (!this._isShown && this._backdrop) {
         $__default['default'](this._backdrop).removeClass(CLASS_NAME_SHOW$3);
+=======
+        $(this._backdrop).one(Util.TRANSITION_END, callback).emulateTransitionEnd(backdropTransitionDuration);
+      } else if (!this._isShown && this._backdrop) {
+        $(this._backdrop).removeClass(CLASS_NAME_SHOW$3);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
         var callbackRemove = function callbackRemove() {
           _this9._removeBackdrop();
@@ -5071,10 +5833,17 @@
           }
         };
 
+<<<<<<< HEAD
         if ($__default['default'](this._element).hasClass(CLASS_NAME_FADE$1)) {
           var _backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
 
           $__default['default'](this._backdrop).one(Util.TRANSITION_END, callbackRemove).emulateTransitionEnd(_backdropTransitionDuration);
+=======
+        if ($(this._element).hasClass(CLASS_NAME_FADE$1)) {
+          var _backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
+
+          $(this._backdrop).one(Util.TRANSITION_END, callbackRemove).emulateTransitionEnd(_backdropTransitionDuration);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         } else {
           callbackRemove();
         }
@@ -5119,6 +5888,7 @@
         var fixedContent = [].slice.call(document.querySelectorAll(SELECTOR_FIXED_CONTENT));
         var stickyContent = [].slice.call(document.querySelectorAll(SELECTOR_STICKY_CONTENT)); // Adjust fixed content padding
 
+<<<<<<< HEAD
         $__default['default'](fixedContent).each(function (index, element) {
           var actualPadding = element.style.paddingRight;
           var calculatedPadding = $__default['default'](element).css('padding-right');
@@ -5137,18 +5907,45 @@
       }
 
       $__default['default'](document.body).addClass(CLASS_NAME_OPEN);
+=======
+        $(fixedContent).each(function (index, element) {
+          var actualPadding = element.style.paddingRight;
+          var calculatedPadding = $(element).css('padding-right');
+          $(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this10._scrollbarWidth + "px");
+        }); // Adjust sticky content margin
+
+        $(stickyContent).each(function (index, element) {
+          var actualMargin = element.style.marginRight;
+          var calculatedMargin = $(element).css('margin-right');
+          $(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this10._scrollbarWidth + "px");
+        }); // Adjust body padding
+
+        var actualPadding = document.body.style.paddingRight;
+        var calculatedPadding = $(document.body).css('padding-right');
+        $(document.body).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
+      }
+
+      $(document.body).addClass(CLASS_NAME_OPEN);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     };
 
     _proto._resetScrollbar = function _resetScrollbar() {
       // Restore fixed content padding
       var fixedContent = [].slice.call(document.querySelectorAll(SELECTOR_FIXED_CONTENT));
+<<<<<<< HEAD
       $__default['default'](fixedContent).each(function (index, element) {
         var padding = $__default['default'](element).data('padding-right');
         $__default['default'](element).removeData('padding-right');
+=======
+      $(fixedContent).each(function (index, element) {
+        var padding = $(element).data('padding-right');
+        $(element).removeData('padding-right');
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         element.style.paddingRight = padding ? padding : '';
       }); // Restore sticky content
 
       var elements = [].slice.call(document.querySelectorAll("" + SELECTOR_STICKY_CONTENT));
+<<<<<<< HEAD
       $__default['default'](elements).each(function (index, element) {
         var margin = $__default['default'](element).data('margin-right');
 
@@ -5159,6 +5956,18 @@
 
       var padding = $__default['default'](document.body).data('padding-right');
       $__default['default'](document.body).removeData('padding-right');
+=======
+      $(elements).each(function (index, element) {
+        var margin = $(element).data('margin-right');
+
+        if (typeof margin !== 'undefined') {
+          $(element).css('margin-right', margin).removeData('margin-right');
+        }
+      }); // Restore body padding
+
+      var padding = $(document.body).data('padding-right');
+      $(document.body).removeData('padding-right');
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       document.body.style.paddingRight = padding ? padding : '';
     };
 
@@ -5175,6 +5984,7 @@
 
     Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
       return this.each(function () {
+<<<<<<< HEAD
         var data = $__default['default'](this).data(DATA_KEY$5);
 
         var _config = _extends({}, Default$3, $__default['default'](this).data(), typeof config === 'object' && config ? config : {});
@@ -5182,6 +5992,15 @@
         if (!data) {
           data = new Modal(this, _config);
           $__default['default'](this).data(DATA_KEY$5, data);
+=======
+        var data = $(this).data(DATA_KEY$5);
+
+        var _config = _extends({}, Default$3, $(this).data(), typeof config === 'object' && config ? config : {});
+
+        if (!data) {
+          data = new Modal(this, _config);
+          $(this).data(DATA_KEY$5, data);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         if (typeof config === 'string') {
@@ -5217,7 +6036,11 @@
    */
 
 
+<<<<<<< HEAD
   $__default['default'](document).on(EVENT_CLICK_DATA_API$5, SELECTOR_DATA_TOGGLE$3, function (event) {
+=======
+  $(document).on(EVENT_CLICK_DATA_API$5, SELECTOR_DATA_TOGGLE$3, function (event) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     var _this11 = this;
 
     var target;
@@ -5227,26 +6050,42 @@
       target = document.querySelector(selector);
     }
 
+<<<<<<< HEAD
     var config = $__default['default'](target).data(DATA_KEY$5) ? 'toggle' : _extends({}, $__default['default'](target).data(), $__default['default'](this).data());
+=======
+    var config = $(target).data(DATA_KEY$5) ? 'toggle' : _extends({}, $(target).data(), $(this).data());
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
     if (this.tagName === 'A' || this.tagName === 'AREA') {
       event.preventDefault();
     }
 
+<<<<<<< HEAD
     var $target = $__default['default'](target).one(EVENT_SHOW$2, function (showEvent) {
+=======
+    var $target = $(target).one(EVENT_SHOW$2, function (showEvent) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       if (showEvent.isDefaultPrevented()) {
         // Only register focus restorer if modal will actually get shown
         return;
       }
 
       $target.one(EVENT_HIDDEN$2, function () {
+<<<<<<< HEAD
         if ($__default['default'](_this11).is(':visible')) {
+=======
+        if ($(_this11).is(':visible')) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
           _this11.focus();
         }
       });
     });
 
+<<<<<<< HEAD
     Modal._jQueryInterface.call($__default['default'](target), config, this);
+=======
+    Modal._jQueryInterface.call($(target), config, this);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   });
   /**
    * ------------------------------------------------------------------------
@@ -5254,17 +6093,29 @@
    * ------------------------------------------------------------------------
    */
 
+<<<<<<< HEAD
   $__default['default'].fn[NAME$5] = Modal._jQueryInterface;
   $__default['default'].fn[NAME$5].Constructor = Modal;
 
   $__default['default'].fn[NAME$5].noConflict = function () {
     $__default['default'].fn[NAME$5] = JQUERY_NO_CONFLICT$5;
+=======
+  $.fn[NAME$5] = Modal._jQueryInterface;
+  $.fn[NAME$5].Constructor = Modal;
+
+  $.fn[NAME$5].noConflict = function () {
+    $.fn[NAME$5] = JQUERY_NO_CONFLICT$5;
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     return Modal._jQueryInterface;
   };
 
   /**
    * --------------------------------------------------------------------------
+<<<<<<< HEAD
    * Bootstrap (v4.5.3): tools/sanitizer.js
+=======
+   * Bootstrap (v4.5.2): tools/sanitizer.js
+>>>>>>> 22bb7e5... bootstrap and font awesome added
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -5390,10 +6241,17 @@
    */
 
   var NAME$6 = 'tooltip';
+<<<<<<< HEAD
   var VERSION$6 = '4.5.3';
   var DATA_KEY$6 = 'bs.tooltip';
   var EVENT_KEY$6 = "." + DATA_KEY$6;
   var JQUERY_NO_CONFLICT$6 = $__default['default'].fn[NAME$6];
+=======
+  var VERSION$6 = '4.5.2';
+  var DATA_KEY$6 = 'bs.tooltip';
+  var EVENT_KEY$6 = "." + DATA_KEY$6;
+  var JQUERY_NO_CONFLICT$6 = $.fn[NAME$6];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   var CLASS_PREFIX = 'bs-tooltip';
   var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
   var DISALLOWED_ATTRIBUTES = ['sanitize', 'whiteList', 'sanitizeFn'];
@@ -5511,11 +6369,19 @@
 
       if (event) {
         var dataKey = this.constructor.DATA_KEY;
+<<<<<<< HEAD
         var context = $__default['default'](event.currentTarget).data(dataKey);
 
         if (!context) {
           context = new this.constructor(event.currentTarget, this._getDelegateConfig());
           $__default['default'](event.currentTarget).data(dataKey, context);
+=======
+        var context = $(event.currentTarget).data(dataKey);
+
+        if (!context) {
+          context = new this.constructor(event.currentTarget, this._getDelegateConfig());
+          $(event.currentTarget).data(dataKey, context);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         context._activeTrigger.click = !context._activeTrigger.click;
@@ -5526,7 +6392,11 @@
           context._leave(null, context);
         }
       } else {
+<<<<<<< HEAD
         if ($__default['default'](this.getTipElement()).hasClass(CLASS_NAME_SHOW$4)) {
+=======
+        if ($(this.getTipElement()).hasClass(CLASS_NAME_SHOW$4)) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
           this._leave(null, this);
 
           return;
@@ -5538,12 +6408,21 @@
 
     _proto.dispose = function dispose() {
       clearTimeout(this._timeout);
+<<<<<<< HEAD
       $__default['default'].removeData(this.element, this.constructor.DATA_KEY);
       $__default['default'](this.element).off(this.constructor.EVENT_KEY);
       $__default['default'](this.element).closest('.modal').off('hide.bs.modal', this._hideModalHandler);
 
       if (this.tip) {
         $__default['default'](this.tip).remove();
+=======
+      $.removeData(this.element, this.constructor.DATA_KEY);
+      $(this.element).off(this.constructor.EVENT_KEY);
+      $(this.element).closest('.modal').off('hide.bs.modal', this._hideModalHandler);
+
+      if (this.tip) {
+        $(this.tip).remove();
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       }
 
       this._isEnabled = null;
@@ -5564,6 +6443,7 @@
     _proto.show = function show() {
       var _this = this;
 
+<<<<<<< HEAD
       if ($__default['default'](this.element).css('display') === 'none') {
         throw new Error('Please use show on visible elements');
       }
@@ -5574,6 +6454,18 @@
         $__default['default'](this.element).trigger(showEvent);
         var shadowRoot = Util.findShadowRoot(this.element);
         var isInTheDom = $__default['default'].contains(shadowRoot !== null ? shadowRoot : this.element.ownerDocument.documentElement, this.element);
+=======
+      if ($(this.element).css('display') === 'none') {
+        throw new Error('Please use show on visible elements');
+      }
+
+      var showEvent = $.Event(this.constructor.Event.SHOW);
+
+      if (this.isWithContent() && this._isEnabled) {
+        $(this.element).trigger(showEvent);
+        var shadowRoot = Util.findShadowRoot(this.element);
+        var isInTheDom = $.contains(shadowRoot !== null ? shadowRoot : this.element.ownerDocument.documentElement, this.element);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
         if (showEvent.isDefaultPrevented() || !isInTheDom) {
           return;
@@ -5586,7 +6478,11 @@
         this.setContent();
 
         if (this.config.animation) {
+<<<<<<< HEAD
           $__default['default'](tip).addClass(CLASS_NAME_FADE$2);
+=======
+          $(tip).addClass(CLASS_NAME_FADE$2);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
@@ -5597,6 +6493,7 @@
 
         var container = this._getContainer();
 
+<<<<<<< HEAD
         $__default['default'](tip).data(this.constructor.DATA_KEY, this);
 
         if (!$__default['default'].contains(this.element.ownerDocument.documentElement, this.tip)) {
@@ -5606,12 +6503,27 @@
         $__default['default'](this.element).trigger(this.constructor.Event.INSERTED);
         this._popper = new Popper(this.element, tip, this._getPopperConfig(attachment));
         $__default['default'](tip).addClass(CLASS_NAME_SHOW$4); // If this is a touch-enabled device we add extra
+=======
+        $(tip).data(this.constructor.DATA_KEY, this);
+
+        if (!$.contains(this.element.ownerDocument.documentElement, this.tip)) {
+          $(tip).appendTo(container);
+        }
+
+        $(this.element).trigger(this.constructor.Event.INSERTED);
+        this._popper = new Popper(this.element, tip, this._getPopperConfig(attachment));
+        $(tip).addClass(CLASS_NAME_SHOW$4); // If this is a touch-enabled device we add extra
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         // empty mouseover listeners to the body's immediate children;
         // only needed because of broken event delegation on iOS
         // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
 
         if ('ontouchstart' in document.documentElement) {
+<<<<<<< HEAD
           $__default['default'](document.body).children().on('mouseover', null, $__default['default'].noop);
+=======
+          $(document.body).children().on('mouseover', null, $.noop);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         var complete = function complete() {
@@ -5621,16 +6533,26 @@
 
           var prevHoverState = _this._hoverState;
           _this._hoverState = null;
+<<<<<<< HEAD
           $__default['default'](_this.element).trigger(_this.constructor.Event.SHOWN);
+=======
+          $(_this.element).trigger(_this.constructor.Event.SHOWN);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
           if (prevHoverState === HOVER_STATE_OUT) {
             _this._leave(null, _this);
           }
         };
 
+<<<<<<< HEAD
         if ($__default['default'](this.tip).hasClass(CLASS_NAME_FADE$2)) {
           var transitionDuration = Util.getTransitionDurationFromElement(this.tip);
           $__default['default'](this.tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+=======
+        if ($(this.tip).hasClass(CLASS_NAME_FADE$2)) {
+          var transitionDuration = Util.getTransitionDurationFromElement(this.tip);
+          $(this.tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         } else {
           complete();
         }
@@ -5641,7 +6563,11 @@
       var _this2 = this;
 
       var tip = this.getTipElement();
+<<<<<<< HEAD
       var hideEvent = $__default['default'].Event(this.constructor.Event.HIDE);
+=======
+      var hideEvent = $.Event(this.constructor.Event.HIDE);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       var complete = function complete() {
         if (_this2._hoverState !== HOVER_STATE_SHOW && tip.parentNode) {
@@ -5652,7 +6578,11 @@
 
         _this2.element.removeAttribute('aria-describedby');
 
+<<<<<<< HEAD
         $__default['default'](_this2.element).trigger(_this2.constructor.Event.HIDDEN);
+=======
+        $(_this2.element).trigger(_this2.constructor.Event.HIDDEN);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
         if (_this2._popper !== null) {
           _this2._popper.destroy();
@@ -5663,26 +6593,44 @@
         }
       };
 
+<<<<<<< HEAD
       $__default['default'](this.element).trigger(hideEvent);
+=======
+      $(this.element).trigger(hideEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (hideEvent.isDefaultPrevented()) {
         return;
       }
 
+<<<<<<< HEAD
       $__default['default'](tip).removeClass(CLASS_NAME_SHOW$4); // If this is a touch-enabled device we remove the extra
       // empty mouseover listeners we added for iOS support
 
       if ('ontouchstart' in document.documentElement) {
         $__default['default'](document.body).children().off('mouseover', null, $__default['default'].noop);
+=======
+      $(tip).removeClass(CLASS_NAME_SHOW$4); // If this is a touch-enabled device we remove the extra
+      // empty mouseover listeners we added for iOS support
+
+      if ('ontouchstart' in document.documentElement) {
+        $(document.body).children().off('mouseover', null, $.noop);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       }
 
       this._activeTrigger[TRIGGER_CLICK] = false;
       this._activeTrigger[TRIGGER_FOCUS] = false;
       this._activeTrigger[TRIGGER_HOVER] = false;
 
+<<<<<<< HEAD
       if ($__default['default'](this.tip).hasClass(CLASS_NAME_FADE$2)) {
         var transitionDuration = Util.getTransitionDurationFromElement(tip);
         $__default['default'](tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+=======
+      if ($(this.tip).hasClass(CLASS_NAME_FADE$2)) {
+        var transitionDuration = Util.getTransitionDurationFromElement(tip);
+        $(tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       } else {
         complete();
       }
@@ -5702,29 +6650,50 @@
     };
 
     _proto.addAttachmentClass = function addAttachmentClass(attachment) {
+<<<<<<< HEAD
       $__default['default'](this.getTipElement()).addClass(CLASS_PREFIX + "-" + attachment);
     };
 
     _proto.getTipElement = function getTipElement() {
       this.tip = this.tip || $__default['default'](this.config.template)[0];
+=======
+      $(this.getTipElement()).addClass(CLASS_PREFIX + "-" + attachment);
+    };
+
+    _proto.getTipElement = function getTipElement() {
+      this.tip = this.tip || $(this.config.template)[0];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       return this.tip;
     };
 
     _proto.setContent = function setContent() {
       var tip = this.getTipElement();
+<<<<<<< HEAD
       this.setElementContent($__default['default'](tip.querySelectorAll(SELECTOR_TOOLTIP_INNER)), this.getTitle());
       $__default['default'](tip).removeClass(CLASS_NAME_FADE$2 + " " + CLASS_NAME_SHOW$4);
+=======
+      this.setElementContent($(tip.querySelectorAll(SELECTOR_TOOLTIP_INNER)), this.getTitle());
+      $(tip).removeClass(CLASS_NAME_FADE$2 + " " + CLASS_NAME_SHOW$4);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     };
 
     _proto.setElementContent = function setElementContent($element, content) {
       if (typeof content === 'object' && (content.nodeType || content.jquery)) {
         // Content is a DOM node or a jQuery
         if (this.config.html) {
+<<<<<<< HEAD
           if (!$__default['default'](content).parent().is($element)) {
             $element.empty().append(content);
           }
         } else {
           $element.text($__default['default'](content).text());
+=======
+          if (!$(content).parent().is($element)) {
+            $element.empty().append(content);
+          }
+        } else {
+          $element.text($(content).text());
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         return;
@@ -5804,10 +6773,17 @@
       }
 
       if (Util.isElement(this.config.container)) {
+<<<<<<< HEAD
         return $__default['default'](this.config.container);
       }
 
       return $__default['default'](document).find(this.config.container);
+=======
+        return $(this.config.container);
+      }
+
+      return $(document).find(this.config.container);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     };
 
     _proto._getAttachment = function _getAttachment(placement) {
@@ -5820,13 +6796,21 @@
       var triggers = this.config.trigger.split(' ');
       triggers.forEach(function (trigger) {
         if (trigger === 'click') {
+<<<<<<< HEAD
           $__default['default'](_this5.element).on(_this5.constructor.Event.CLICK, _this5.config.selector, function (event) {
+=======
+          $(_this5.element).on(_this5.constructor.Event.CLICK, _this5.config.selector, function (event) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
             return _this5.toggle(event);
           });
         } else if (trigger !== TRIGGER_MANUAL) {
           var eventIn = trigger === TRIGGER_HOVER ? _this5.constructor.Event.MOUSEENTER : _this5.constructor.Event.FOCUSIN;
           var eventOut = trigger === TRIGGER_HOVER ? _this5.constructor.Event.MOUSELEAVE : _this5.constructor.Event.FOCUSOUT;
+<<<<<<< HEAD
           $__default['default'](_this5.element).on(eventIn, _this5.config.selector, function (event) {
+=======
+          $(_this5.element).on(eventIn, _this5.config.selector, function (event) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
             return _this5._enter(event);
           }).on(eventOut, _this5.config.selector, function (event) {
             return _this5._leave(event);
@@ -5840,7 +6824,11 @@
         }
       };
 
+<<<<<<< HEAD
       $__default['default'](this.element).closest('.modal').on('hide.bs.modal', this._hideModalHandler);
+=======
+      $(this.element).closest('.modal').on('hide.bs.modal', this._hideModalHandler);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (this.config.selector) {
         this.config = _extends({}, this.config, {
@@ -5863,18 +6851,30 @@
 
     _proto._enter = function _enter(event, context) {
       var dataKey = this.constructor.DATA_KEY;
+<<<<<<< HEAD
       context = context || $__default['default'](event.currentTarget).data(dataKey);
 
       if (!context) {
         context = new this.constructor(event.currentTarget, this._getDelegateConfig());
         $__default['default'](event.currentTarget).data(dataKey, context);
+=======
+      context = context || $(event.currentTarget).data(dataKey);
+
+      if (!context) {
+        context = new this.constructor(event.currentTarget, this._getDelegateConfig());
+        $(event.currentTarget).data(dataKey, context);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       }
 
       if (event) {
         context._activeTrigger[event.type === 'focusin' ? TRIGGER_FOCUS : TRIGGER_HOVER] = true;
       }
 
+<<<<<<< HEAD
       if ($__default['default'](context.getTipElement()).hasClass(CLASS_NAME_SHOW$4) || context._hoverState === HOVER_STATE_SHOW) {
+=======
+      if ($(context.getTipElement()).hasClass(CLASS_NAME_SHOW$4) || context._hoverState === HOVER_STATE_SHOW) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         context._hoverState = HOVER_STATE_SHOW;
         return;
       }
@@ -5896,11 +6896,19 @@
 
     _proto._leave = function _leave(event, context) {
       var dataKey = this.constructor.DATA_KEY;
+<<<<<<< HEAD
       context = context || $__default['default'](event.currentTarget).data(dataKey);
 
       if (!context) {
         context = new this.constructor(event.currentTarget, this._getDelegateConfig());
         $__default['default'](event.currentTarget).data(dataKey, context);
+=======
+      context = context || $(event.currentTarget).data(dataKey);
+
+      if (!context) {
+        context = new this.constructor(event.currentTarget, this._getDelegateConfig());
+        $(event.currentTarget).data(dataKey, context);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       }
 
       if (event) {
@@ -5937,7 +6945,11 @@
     };
 
     _proto._getConfig = function _getConfig(config) {
+<<<<<<< HEAD
       var dataAttributes = $__default['default'](this.element).data();
+=======
+      var dataAttributes = $(this.element).data();
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       Object.keys(dataAttributes).forEach(function (dataAttr) {
         if (DISALLOWED_ATTRIBUTES.indexOf(dataAttr) !== -1) {
           delete dataAttributes[dataAttr];
@@ -5984,7 +6996,11 @@
     };
 
     _proto._cleanTipClass = function _cleanTipClass() {
+<<<<<<< HEAD
       var $tip = $__default['default'](this.getTipElement());
+=======
+      var $tip = $(this.getTipElement());
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
 
       if (tabClass !== null && tabClass.length) {
@@ -6008,7 +7024,11 @@
         return;
       }
 
+<<<<<<< HEAD
       $__default['default'](tip).removeClass(CLASS_NAME_FADE$2);
+=======
+      $(tip).removeClass(CLASS_NAME_FADE$2);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       this.config.animation = false;
       this.hide();
       this.show();
@@ -6018,8 +7038,12 @@
 
     Tooltip._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
+<<<<<<< HEAD
         var $element = $__default['default'](this);
         var data = $element.data(DATA_KEY$6);
+=======
+        var data = $(this).data(DATA_KEY$6);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
         var _config = typeof config === 'object' && config;
 
@@ -6029,7 +7053,11 @@
 
         if (!data) {
           data = new Tooltip(this, _config);
+<<<<<<< HEAD
           $element.data(DATA_KEY$6, data);
+=======
+          $(this).data(DATA_KEY$6, data);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         if (typeof config === 'string') {
@@ -6088,11 +7116,19 @@
    */
 
 
+<<<<<<< HEAD
   $__default['default'].fn[NAME$6] = Tooltip._jQueryInterface;
   $__default['default'].fn[NAME$6].Constructor = Tooltip;
 
   $__default['default'].fn[NAME$6].noConflict = function () {
     $__default['default'].fn[NAME$6] = JQUERY_NO_CONFLICT$6;
+=======
+  $.fn[NAME$6] = Tooltip._jQueryInterface;
+  $.fn[NAME$6].Constructor = Tooltip;
+
+  $.fn[NAME$6].noConflict = function () {
+    $.fn[NAME$6] = JQUERY_NO_CONFLICT$6;
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     return Tooltip._jQueryInterface;
   };
 
@@ -6103,10 +7139,17 @@
    */
 
   var NAME$7 = 'popover';
+<<<<<<< HEAD
   var VERSION$7 = '4.5.3';
   var DATA_KEY$7 = 'bs.popover';
   var EVENT_KEY$7 = "." + DATA_KEY$7;
   var JQUERY_NO_CONFLICT$7 = $__default['default'].fn[NAME$7];
+=======
+  var VERSION$7 = '4.5.2';
+  var DATA_KEY$7 = 'bs.popover';
+  var EVENT_KEY$7 = "." + DATA_KEY$7;
+  var JQUERY_NO_CONFLICT$7 = $.fn[NAME$7];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   var CLASS_PREFIX$1 = 'bs-popover';
   var BSCLS_PREFIX_REGEX$1 = new RegExp("(^|\\s)" + CLASS_PREFIX$1 + "\\S+", 'g');
 
@@ -6158,16 +7201,28 @@
     };
 
     _proto.addAttachmentClass = function addAttachmentClass(attachment) {
+<<<<<<< HEAD
       $__default['default'](this.getTipElement()).addClass(CLASS_PREFIX$1 + "-" + attachment);
     };
 
     _proto.getTipElement = function getTipElement() {
       this.tip = this.tip || $__default['default'](this.config.template)[0];
+=======
+      $(this.getTipElement()).addClass(CLASS_PREFIX$1 + "-" + attachment);
+    };
+
+    _proto.getTipElement = function getTipElement() {
+      this.tip = this.tip || $(this.config.template)[0];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       return this.tip;
     };
 
     _proto.setContent = function setContent() {
+<<<<<<< HEAD
       var $tip = $__default['default'](this.getTipElement()); // We use append for html objects to maintain js events
+=======
+      var $tip = $(this.getTipElement()); // We use append for html objects to maintain js events
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       this.setElementContent($tip.find(SELECTOR_TITLE), this.getTitle());
 
@@ -6187,7 +7242,11 @@
     };
 
     _proto._cleanTipClass = function _cleanTipClass() {
+<<<<<<< HEAD
       var $tip = $__default['default'](this.getTipElement());
+=======
+      var $tip = $(this.getTipElement());
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX$1);
 
       if (tabClass !== null && tabClass.length > 0) {
@@ -6198,7 +7257,11 @@
 
     Popover._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
+<<<<<<< HEAD
         var data = $__default['default'](this).data(DATA_KEY$7);
+=======
+        var data = $(this).data(DATA_KEY$7);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
         var _config = typeof config === 'object' ? config : null;
 
@@ -6208,7 +7271,11 @@
 
         if (!data) {
           data = new Popover(this, _config);
+<<<<<<< HEAD
           $__default['default'](this).data(DATA_KEY$7, data);
+=======
+          $(this).data(DATA_KEY$7, data);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         if (typeof config === 'string') {
@@ -6268,11 +7335,19 @@
    */
 
 
+<<<<<<< HEAD
   $__default['default'].fn[NAME$7] = Popover._jQueryInterface;
   $__default['default'].fn[NAME$7].Constructor = Popover;
 
   $__default['default'].fn[NAME$7].noConflict = function () {
     $__default['default'].fn[NAME$7] = JQUERY_NO_CONFLICT$7;
+=======
+  $.fn[NAME$7] = Popover._jQueryInterface;
+  $.fn[NAME$7].Constructor = Popover;
+
+  $.fn[NAME$7].noConflict = function () {
+    $.fn[NAME$7] = JQUERY_NO_CONFLICT$7;
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     return Popover._jQueryInterface;
   };
 
@@ -6283,11 +7358,19 @@
    */
 
   var NAME$8 = 'scrollspy';
+<<<<<<< HEAD
   var VERSION$8 = '4.5.3';
   var DATA_KEY$8 = 'bs.scrollspy';
   var EVENT_KEY$8 = "." + DATA_KEY$8;
   var DATA_API_KEY$6 = '.data-api';
   var JQUERY_NO_CONFLICT$8 = $__default['default'].fn[NAME$8];
+=======
+  var VERSION$8 = '4.5.2';
+  var DATA_KEY$8 = 'bs.scrollspy';
+  var EVENT_KEY$8 = "." + DATA_KEY$8;
+  var DATA_API_KEY$6 = '.data-api';
+  var JQUERY_NO_CONFLICT$8 = $.fn[NAME$8];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   var Default$6 = {
     offset: 10,
     method: 'auto',
@@ -6331,7 +7414,11 @@
       this._targets = [];
       this._activeTarget = null;
       this._scrollHeight = 0;
+<<<<<<< HEAD
       $__default['default'](this._scrollElement).on(EVENT_SCROLL, function (event) {
+=======
+      $(this._scrollElement).on(EVENT_SCROLL, function (event) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         return _this._process(event);
       });
       this.refresh();
@@ -6366,7 +7453,11 @@
 
           if (targetBCR.width || targetBCR.height) {
             // TODO (fat): remove sketch reliance on jQuery position/offset
+<<<<<<< HEAD
             return [$__default['default'](target)[offsetMethod]().top + offsetBase, targetSelector];
+=======
+            return [$(target)[offsetMethod]().top + offsetBase, targetSelector];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
           }
         }
 
@@ -6383,8 +7474,13 @@
     };
 
     _proto.dispose = function dispose() {
+<<<<<<< HEAD
       $__default['default'].removeData(this._element, DATA_KEY$8);
       $__default['default'](this._scrollElement).off(EVENT_KEY$8);
+=======
+      $.removeData(this._element, DATA_KEY$8);
+      $(this._scrollElement).off(EVENT_KEY$8);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       this._element = null;
       this._scrollElement = null;
       this._config = null;
@@ -6400,11 +7496,19 @@
       config = _extends({}, Default$6, typeof config === 'object' && config ? config : {});
 
       if (typeof config.target !== 'string' && Util.isElement(config.target)) {
+<<<<<<< HEAD
         var id = $__default['default'](config.target).attr('id');
 
         if (!id) {
           id = Util.getUID(NAME$8);
           $__default['default'](config.target).attr('id', id);
+=======
+        var id = $(config.target).attr('id');
+
+        if (!id) {
+          id = Util.getUID(NAME$8);
+          $(config.target).attr('id', id);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         config.target = "#" + id;
@@ -6473,7 +7577,11 @@
         return selector + "[data-target=\"" + target + "\"]," + selector + "[href=\"" + target + "\"]";
       });
 
+<<<<<<< HEAD
       var $link = $__default['default']([].slice.call(document.querySelectorAll(queries.join(','))));
+=======
+      var $link = $([].slice.call(document.querySelectorAll(queries.join(','))));
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if ($link.hasClass(CLASS_NAME_DROPDOWN_ITEM)) {
         $link.closest(SELECTOR_DROPDOWN).find(SELECTOR_DROPDOWN_TOGGLE).addClass(CLASS_NAME_ACTIVE$2);
@@ -6488,7 +7596,11 @@
         $link.parents(SELECTOR_NAV_LIST_GROUP).prev(SELECTOR_NAV_ITEMS).children(SELECTOR_NAV_LINKS).addClass(CLASS_NAME_ACTIVE$2);
       }
 
+<<<<<<< HEAD
       $__default['default'](this._scrollElement).trigger(EVENT_ACTIVATE, {
+=======
+      $(this._scrollElement).trigger(EVENT_ACTIVATE, {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         relatedTarget: target
       });
     };
@@ -6504,13 +7616,21 @@
 
     ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
+<<<<<<< HEAD
         var data = $__default['default'](this).data(DATA_KEY$8);
+=======
+        var data = $(this).data(DATA_KEY$8);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
         var _config = typeof config === 'object' && config;
 
         if (!data) {
           data = new ScrollSpy(this, _config);
+<<<<<<< HEAD
           $__default['default'](this).data(DATA_KEY$8, data);
+=======
+          $(this).data(DATA_KEY$8, data);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         if (typeof config === 'string') {
@@ -6544,12 +7664,20 @@
    */
 
 
+<<<<<<< HEAD
   $__default['default'](window).on(EVENT_LOAD_DATA_API$2, function () {
+=======
+  $(window).on(EVENT_LOAD_DATA_API$2, function () {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     var scrollSpys = [].slice.call(document.querySelectorAll(SELECTOR_DATA_SPY));
     var scrollSpysLength = scrollSpys.length;
 
     for (var i = scrollSpysLength; i--;) {
+<<<<<<< HEAD
       var $spy = $__default['default'](scrollSpys[i]);
+=======
+      var $spy = $(scrollSpys[i]);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       ScrollSpy._jQueryInterface.call($spy, $spy.data());
     }
@@ -6560,11 +7688,19 @@
    * ------------------------------------------------------------------------
    */
 
+<<<<<<< HEAD
   $__default['default'].fn[NAME$8] = ScrollSpy._jQueryInterface;
   $__default['default'].fn[NAME$8].Constructor = ScrollSpy;
 
   $__default['default'].fn[NAME$8].noConflict = function () {
     $__default['default'].fn[NAME$8] = JQUERY_NO_CONFLICT$8;
+=======
+  $.fn[NAME$8] = ScrollSpy._jQueryInterface;
+  $.fn[NAME$8].Constructor = ScrollSpy;
+
+  $.fn[NAME$8].noConflict = function () {
+    $.fn[NAME$8] = JQUERY_NO_CONFLICT$8;
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     return ScrollSpy._jQueryInterface;
   };
 
@@ -6575,11 +7711,19 @@
    */
 
   var NAME$9 = 'tab';
+<<<<<<< HEAD
   var VERSION$9 = '4.5.3';
   var DATA_KEY$9 = 'bs.tab';
   var EVENT_KEY$9 = "." + DATA_KEY$9;
   var DATA_API_KEY$7 = '.data-api';
   var JQUERY_NO_CONFLICT$9 = $__default['default'].fn[NAME$9];
+=======
+  var VERSION$9 = '4.5.2';
+  var DATA_KEY$9 = 'bs.tab';
+  var EVENT_KEY$9 = "." + DATA_KEY$9;
+  var DATA_API_KEY$7 = '.data-api';
+  var JQUERY_NO_CONFLICT$9 = $.fn[NAME$9];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   var EVENT_HIDE$3 = "hide" + EVENT_KEY$9;
   var EVENT_HIDDEN$3 = "hidden" + EVENT_KEY$9;
   var EVENT_SHOW$3 = "show" + EVENT_KEY$9;
@@ -6615,17 +7759,26 @@
     _proto.show = function show() {
       var _this = this;
 
+<<<<<<< HEAD
       if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $__default['default'](this._element).hasClass(CLASS_NAME_ACTIVE$3) || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED$1)) {
+=======
+      if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $(this._element).hasClass(CLASS_NAME_ACTIVE$3) || $(this._element).hasClass(CLASS_NAME_DISABLED$1)) {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         return;
       }
 
       var target;
       var previous;
+<<<<<<< HEAD
       var listElement = $__default['default'](this._element).closest(SELECTOR_NAV_LIST_GROUP$1)[0];
+=======
+      var listElement = $(this._element).closest(SELECTOR_NAV_LIST_GROUP$1)[0];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       var selector = Util.getSelectorFromElement(this._element);
 
       if (listElement) {
         var itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? SELECTOR_ACTIVE_UL : SELECTOR_ACTIVE$2;
+<<<<<<< HEAD
         previous = $__default['default'].makeArray($__default['default'](listElement).find(itemSelector));
         previous = previous[previous.length - 1];
       }
@@ -6634,14 +7787,31 @@
         relatedTarget: this._element
       });
       var showEvent = $__default['default'].Event(EVENT_SHOW$3, {
+=======
+        previous = $.makeArray($(listElement).find(itemSelector));
+        previous = previous[previous.length - 1];
+      }
+
+      var hideEvent = $.Event(EVENT_HIDE$3, {
+        relatedTarget: this._element
+      });
+      var showEvent = $.Event(EVENT_SHOW$3, {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         relatedTarget: previous
       });
 
       if (previous) {
+<<<<<<< HEAD
         $__default['default'](previous).trigger(hideEvent);
       }
 
       $__default['default'](this._element).trigger(showEvent);
+=======
+        $(previous).trigger(hideEvent);
+      }
+
+      $(this._element).trigger(showEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) {
         return;
@@ -6654,6 +7824,7 @@
       this._activate(this._element, listElement);
 
       var complete = function complete() {
+<<<<<<< HEAD
         var hiddenEvent = $__default['default'].Event(EVENT_HIDDEN$3, {
           relatedTarget: _this._element
         });
@@ -6662,6 +7833,16 @@
         });
         $__default['default'](previous).trigger(hiddenEvent);
         $__default['default'](_this._element).trigger(shownEvent);
+=======
+        var hiddenEvent = $.Event(EVENT_HIDDEN$3, {
+          relatedTarget: _this._element
+        });
+        var shownEvent = $.Event(EVENT_SHOWN$3, {
+          relatedTarget: previous
+        });
+        $(previous).trigger(hiddenEvent);
+        $(_this._element).trigger(shownEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       };
 
       if (target) {
@@ -6672,7 +7853,11 @@
     };
 
     _proto.dispose = function dispose() {
+<<<<<<< HEAD
       $__default['default'].removeData(this._element, DATA_KEY$9);
+=======
+      $.removeData(this._element, DATA_KEY$9);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       this._element = null;
     } // Private
     ;
@@ -6680,9 +7865,15 @@
     _proto._activate = function _activate(element, container, callback) {
       var _this2 = this;
 
+<<<<<<< HEAD
       var activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? $__default['default'](container).find(SELECTOR_ACTIVE_UL) : $__default['default'](container).children(SELECTOR_ACTIVE$2);
       var active = activeElements[0];
       var isTransitioning = callback && active && $__default['default'](active).hasClass(CLASS_NAME_FADE$4);
+=======
+      var activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? $(container).find(SELECTOR_ACTIVE_UL) : $(container).children(SELECTOR_ACTIVE$2);
+      var active = activeElements[0];
+      var isTransitioning = callback && active && $(active).hasClass(CLASS_NAME_FADE$4);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       var complete = function complete() {
         return _this2._transitionComplete(element, active, callback);
@@ -6690,7 +7881,11 @@
 
       if (active && isTransitioning) {
         var transitionDuration = Util.getTransitionDurationFromElement(active);
+<<<<<<< HEAD
         $__default['default'](active).removeClass(CLASS_NAME_SHOW$6).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+=======
+        $(active).removeClass(CLASS_NAME_SHOW$6).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       } else {
         complete();
       }
@@ -6698,11 +7893,19 @@
 
     _proto._transitionComplete = function _transitionComplete(element, active, callback) {
       if (active) {
+<<<<<<< HEAD
         $__default['default'](active).removeClass(CLASS_NAME_ACTIVE$3);
         var dropdownChild = $__default['default'](active.parentNode).find(SELECTOR_DROPDOWN_ACTIVE_CHILD)[0];
 
         if (dropdownChild) {
           $__default['default'](dropdownChild).removeClass(CLASS_NAME_ACTIVE$3);
+=======
+        $(active).removeClass(CLASS_NAME_ACTIVE$3);
+        var dropdownChild = $(active.parentNode).find(SELECTOR_DROPDOWN_ACTIVE_CHILD)[0];
+
+        if (dropdownChild) {
+          $(dropdownChild).removeClass(CLASS_NAME_ACTIVE$3);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         if (active.getAttribute('role') === 'tab') {
@@ -6710,7 +7913,11 @@
         }
       }
 
+<<<<<<< HEAD
       $__default['default'](element).addClass(CLASS_NAME_ACTIVE$3);
+=======
+      $(element).addClass(CLASS_NAME_ACTIVE$3);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (element.getAttribute('role') === 'tab') {
         element.setAttribute('aria-selected', true);
@@ -6722,12 +7929,21 @@
         element.classList.add(CLASS_NAME_SHOW$6);
       }
 
+<<<<<<< HEAD
       if (element.parentNode && $__default['default'](element.parentNode).hasClass(CLASS_NAME_DROPDOWN_MENU)) {
         var dropdownElement = $__default['default'](element).closest(SELECTOR_DROPDOWN$1)[0];
 
         if (dropdownElement) {
           var dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(SELECTOR_DROPDOWN_TOGGLE$1));
           $__default['default'](dropdownToggleList).addClass(CLASS_NAME_ACTIVE$3);
+=======
+      if (element.parentNode && $(element.parentNode).hasClass(CLASS_NAME_DROPDOWN_MENU)) {
+        var dropdownElement = $(element).closest(SELECTOR_DROPDOWN$1)[0];
+
+        if (dropdownElement) {
+          var dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(SELECTOR_DROPDOWN_TOGGLE$1));
+          $(dropdownToggleList).addClass(CLASS_NAME_ACTIVE$3);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         }
 
         element.setAttribute('aria-expanded', true);
@@ -6741,7 +7957,11 @@
 
     Tab._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
+<<<<<<< HEAD
         var $this = $__default['default'](this);
+=======
+        var $this = $(this);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         var data = $this.data(DATA_KEY$9);
 
         if (!data) {
@@ -6775,10 +7995,17 @@
    */
 
 
+<<<<<<< HEAD
   $__default['default'](document).on(EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$4, function (event) {
     event.preventDefault();
 
     Tab._jQueryInterface.call($__default['default'](this), 'show');
+=======
+  $(document).on(EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$4, function (event) {
+    event.preventDefault();
+
+    Tab._jQueryInterface.call($(this), 'show');
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   });
   /**
    * ------------------------------------------------------------------------
@@ -6786,11 +8013,19 @@
    * ------------------------------------------------------------------------
    */
 
+<<<<<<< HEAD
   $__default['default'].fn[NAME$9] = Tab._jQueryInterface;
   $__default['default'].fn[NAME$9].Constructor = Tab;
 
   $__default['default'].fn[NAME$9].noConflict = function () {
     $__default['default'].fn[NAME$9] = JQUERY_NO_CONFLICT$9;
+=======
+  $.fn[NAME$9] = Tab._jQueryInterface;
+  $.fn[NAME$9].Constructor = Tab;
+
+  $.fn[NAME$9].noConflict = function () {
+    $.fn[NAME$9] = JQUERY_NO_CONFLICT$9;
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     return Tab._jQueryInterface;
   };
 
@@ -6801,10 +8036,17 @@
    */
 
   var NAME$a = 'toast';
+<<<<<<< HEAD
   var VERSION$a = '4.5.3';
   var DATA_KEY$a = 'bs.toast';
   var EVENT_KEY$a = "." + DATA_KEY$a;
   var JQUERY_NO_CONFLICT$a = $__default['default'].fn[NAME$a];
+=======
+  var VERSION$a = '4.5.2';
+  var DATA_KEY$a = 'bs.toast';
+  var EVENT_KEY$a = "." + DATA_KEY$a;
+  var JQUERY_NO_CONFLICT$a = $.fn[NAME$a];
+>>>>>>> 22bb7e5... bootstrap and font awesome added
   var EVENT_CLICK_DISMISS$1 = "click.dismiss" + EVENT_KEY$a;
   var EVENT_HIDE$4 = "hide" + EVENT_KEY$a;
   var EVENT_HIDDEN$4 = "hidden" + EVENT_KEY$a;
@@ -6847,8 +8089,13 @@
     _proto.show = function show() {
       var _this = this;
 
+<<<<<<< HEAD
       var showEvent = $__default['default'].Event(EVENT_SHOW$4);
       $__default['default'](this._element).trigger(showEvent);
+=======
+      var showEvent = $.Event(EVENT_SHOW$4);
+      $(this._element).trigger(showEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (showEvent.isDefaultPrevented()) {
         return;
@@ -6865,7 +8112,11 @@
 
         _this._element.classList.add(CLASS_NAME_SHOW$7);
 
+<<<<<<< HEAD
         $__default['default'](_this._element).trigger(EVENT_SHOWN$4);
+=======
+        $(_this._element).trigger(EVENT_SHOWN$4);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
         if (_this._config.autohide) {
           _this._timeout = setTimeout(function () {
@@ -6882,7 +8133,11 @@
 
       if (this._config.animation) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+<<<<<<< HEAD
         $__default['default'](this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+=======
+        $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       } else {
         complete();
       }
@@ -6893,8 +8148,13 @@
         return;
       }
 
+<<<<<<< HEAD
       var hideEvent = $__default['default'].Event(EVENT_HIDE$4);
       $__default['default'](this._element).trigger(hideEvent);
+=======
+      var hideEvent = $.Event(EVENT_HIDE$4);
+      $(this._element).trigger(hideEvent);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
 
       if (hideEvent.isDefaultPrevented()) {
         return;
@@ -6910,15 +8170,24 @@
         this._element.classList.remove(CLASS_NAME_SHOW$7);
       }
 
+<<<<<<< HEAD
       $__default['default'](this._element).off(EVENT_CLICK_DISMISS$1);
       $__default['default'].removeData(this._element, DATA_KEY$a);
+=======
+      $(this._element).off(EVENT_CLICK_DISMISS$1);
+      $.removeData(this._element, DATA_KEY$a);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       this._element = null;
       this._config = null;
     } // Private
     ;
 
     _proto._getConfig = function _getConfig(config) {
+<<<<<<< HEAD
       config = _extends({}, Default$7, $__default['default'](this._element).data(), typeof config === 'object' && config ? config : {});
+=======
+      config = _extends({}, Default$7, $(this._element).data(), typeof config === 'object' && config ? config : {});
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       Util.typeCheckConfig(NAME$a, config, this.constructor.DefaultType);
       return config;
     };
@@ -6926,7 +8195,11 @@
     _proto._setListeners = function _setListeners() {
       var _this2 = this;
 
+<<<<<<< HEAD
       $__default['default'](this._element).on(EVENT_CLICK_DISMISS$1, SELECTOR_DATA_DISMISS$1, function () {
+=======
+      $(this._element).on(EVENT_CLICK_DISMISS$1, SELECTOR_DATA_DISMISS$1, function () {
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         return _this2.hide();
       });
     };
@@ -6937,14 +8210,22 @@
       var complete = function complete() {
         _this3._element.classList.add(CLASS_NAME_HIDE);
 
+<<<<<<< HEAD
         $__default['default'](_this3._element).trigger(EVENT_HIDDEN$4);
+=======
+        $(_this3._element).trigger(EVENT_HIDDEN$4);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       };
 
       this._element.classList.remove(CLASS_NAME_SHOW$7);
 
       if (this._config.animation) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+<<<<<<< HEAD
         $__default['default'](this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+=======
+        $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
       } else {
         complete();
       }
@@ -6958,7 +8239,11 @@
 
     Toast._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
+<<<<<<< HEAD
         var $element = $__default['default'](this);
+=======
+        var $element = $(this);
+>>>>>>> 22bb7e5... bootstrap and font awesome added
         var data = $element.data(DATA_KEY$a);
 
         var _config = typeof config === 'object' && config;
@@ -7004,11 +8289,19 @@
    */
 
 
+<<<<<<< HEAD
   $__default['default'].fn[NAME$a] = Toast._jQueryInterface;
   $__default['default'].fn[NAME$a].Constructor = Toast;
 
   $__default['default'].fn[NAME$a].noConflict = function () {
     $__default['default'].fn[NAME$a] = JQUERY_NO_CONFLICT$a;
+=======
+  $.fn[NAME$a] = Toast._jQueryInterface;
+  $.fn[NAME$a].Constructor = Toast;
+
+  $.fn[NAME$a].noConflict = function () {
+    $.fn[NAME$a] = JQUERY_NO_CONFLICT$a;
+>>>>>>> 22bb7e5... bootstrap and font awesome added
     return Toast._jQueryInterface;
   };
 

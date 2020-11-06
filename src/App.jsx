@@ -8,7 +8,7 @@ class App extends Component {
 	state = {
 		persons: [],
 		person: '',
-		showPersons: false
+		showPersons: true
 	};
 
 	handleShowPerson = () => {
@@ -48,10 +48,6 @@ class App extends Component {
 	};
 
 	render() {
-		const buttonStyle = {
-			padding: '0.5rem',
-			backgroundColor: 'skyBlue'
-		};
 		const { persons, showPersons } = this.state;
 		let person = null;
 		if (showPersons) {
@@ -64,26 +60,43 @@ class App extends Component {
 			);
 		}
 		return (
-			<div className='App'>
-				<h2>Person Manager</h2>
-				<hr />
-				<div>
-					<input
-						type='text'
-						placeholder='Write down new person'
-						className='taskInput'
-						value={this.state.person}
-						onChange={this.setPerson}
-					/>
-					<button
-						onClick={this.handleNewPerson}
-						className='btn btn-md btn-success fa fa-plus-square'
-					/>
+			<div className='text-center'>
+				<div className='alert alert-info'>
+					<h2>Person Manager</h2>
 				</div>
-				<button style={buttonStyle} onClick={this.handleShowPerson}>
+				<h5 className='alert alert-light'>
+					Number of persons :
+					<span className='badge badge-pill badge-success ml-1'>
+						{` ${persons.length}`}
+					</span>
+				</h5>
+
+				<div className='m-2 p-2'>
+					<form
+						className='form-inline justify-content-center'
+						onSubmit={event => event.preventDefault()}>
+						<div className='input-group w-50'>
+							<input
+								type='text'
+								placeholder='Give me a name'
+								className='taskInput form-control'
+								onChange={this.setPerson}
+								value={this.state.person}
+							/>
+
+							<div className='input-group-prepend'>
+								<button
+									type='submit'
+									onClick={this.handleNewPerson}
+									className='btn btn-md btn-success fa fa-plus-square'
+								/>
+							</div>
+						</div>
+					</form>
+				</div>
+				<button onClick={this.handleShowPerson} className='btn btn-info '>
 					Show Persons
 				</button>
-				<p>{`Number of persons  : ${persons.length}`}</p>
 				{person}
 			</div>
 		);

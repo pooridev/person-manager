@@ -6,7 +6,10 @@ import './App.css';
 
 class App extends Component {
 	state = {
-		persons: [],
+		persons: [
+			{ fullName: 'Pooria Faramarzian', id: Math.floor(Math.random() * 100) },
+			{ fullName: 'John Doe', id: Math.floor(Math.random() * 100) }
+		],
 		person: '',
 		showPersons: true
 	};

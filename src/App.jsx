@@ -49,6 +49,10 @@ class App extends Component {
 
 	render() {
 		const { persons, showPersons } = this.state;
+		let badgeStyle = [];
+		if (persons.length >= 3) badgeStyle.push('badge-success');
+		if (persons.length <= 2) badgeStyle.push('badge-warning');
+		if (persons.length <= 1) badgeStyle.push('badge-danger');
 		let person = null;
 		if (showPersons) {
 			person = (
@@ -66,16 +70,17 @@ class App extends Component {
 				</div>
 				<h5 className='alert alert-light'>
 					Number of persons :
-					<span className='badge badge-pill badge-success ml-1'>
-						{` ${persons.length}`}
-					</span>
+					<span
+						className={`badge badge-pill ml-1 ${badgeStyle.join(
+							' '
+						)}`}>{` ${persons.length}`}</span>
 				</h5>
 
 				<div className='m-2 p-2'>
 					<form
 						className='form-inline justify-content-center'
 						onSubmit={event => event.preventDefault()}>
-						<div className='input-group w-50'>
+						<div className='input-group col-6 col-md-4'>
 							<input
 								type='text'
 								placeholder='Give me a name'
@@ -94,8 +99,10 @@ class App extends Component {
 						</div>
 					</form>
 				</div>
-				<button onClick={this.handleShowPerson} className='btn btn-info '>
-					Show Persons
+				<button
+					onClick={this.handleShowPerson}
+					className={showPersons ? 'btn btn-success' : 'btn btn-warning'}>
+					{showPersons ? 'hide persons' : 'show persons'}
 				</button>
 				{person}
 			</div>

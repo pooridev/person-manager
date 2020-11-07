@@ -2,7 +2,7 @@ import React from 'react';
 
 const Person = ({ fullName, personDelete, changed }) => {
 	return (
-		<div className='card text-white bg-info my-3 w-50 mx-auto'>
+		<div className='card text-white bg-info my-3 col-6 col-md-4 mx-auto'>
 			<div className='card-body text-center'>
 				<p className='d-block'>{`${fullName}`}</p>
 				<div className='input-group'>

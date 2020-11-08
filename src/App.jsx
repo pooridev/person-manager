@@ -93,7 +93,7 @@ class App extends Component {
 		return (
 			<div className='text-center'>
 				{/*Main Header */}
-				<Header personsLength={person.length} />
+				<Header personsLength={persons.length} />
 				{/*/Main Header */}
 				<div className='m-2 p-2'>
 					<form

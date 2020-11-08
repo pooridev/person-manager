@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 import { Button, Alert, Badge } from 'react-bootstrap';
 
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
 import Persons from './components/Persons';
 
 import './App.css';
@@ -15,15 +19,27 @@ class App extends Component {
 		person: '',
 		showPersons: true
 	};
-
+	// Show/Hide Persons
 	handleShowPerson = () => {
 		this.setState({ showPersons: !this.state.showPersons });
 	};
+	// Delete Person
 	handleDeletePerson = id => {
 		const persons = [...this.state.persons];
 		const filteredPersons = persons.filter(person => person.id !== id);
 		this.setState({ persons: filteredPersons });
+
+		const personIndex = persons.findIndex(person => person.id === id);
+		const person = persons[personIndex];
+
+		// Toast
+		toast.error(`${person.fullName} has been deleted`, {
+			position: 'top-right',
+			closeButton: true,
+			closeOnClick: true
+		});
 	};
+	// Edit Person
 	handleChangePerson = (event, id) => {
 		const { persons: allPersons } = this.state;
 		const personIndex = allPersons.findIndex(person => person.id === id);
@@ -35,6 +51,7 @@ class App extends Component {
 
 		this.setState({ persons });
 	};
+	// New Person
 	handleNewPerson = () => {
 		const taskInput = document.querySelector('.taskInput');
 		if (taskInput.value === null || taskInput.value === '') return;
@@ -46,6 +63,12 @@ class App extends Component {
 
 		persons.push(person);
 		this.setState({ persons, person: '' });
+		// Toast
+		toast.success('person has been added.', {
+			position: 'bottom-right',
+			closeButton: true,
+			closeOnClick: true
+		});
 	};
 
 	setPerson = event => {
@@ -112,6 +135,7 @@ class App extends Component {
 					{showPersons ? 'hide persons' : 'show persons'}
 				</Button>
 				{person}
+				<ToastContainer />
 			</div>
 		);
 	}

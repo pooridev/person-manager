@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Button, Alert, Badge } from 'react-bootstrap';
+
 import Persons from './components/Persons';
 
 import './App.css';
@@ -52,10 +54,10 @@ class App extends Component {
 
 	render() {
 		const { persons, showPersons } = this.state;
-		let badgeStyle = [];
-		if (persons.length >= 3) badgeStyle.push('badge-success');
-		if (persons.length <= 2) badgeStyle.push('badge-warning');
-		if (persons.length <= 1) badgeStyle.push('badge-danger');
+		let badgeStyle = '';
+		if (persons.length >= 3) badgeStyle = 'success';
+		if (persons.length <= 2) badgeStyle = 'warning';
+		if (persons.length <= 1) badgeStyle = 'danger';
 		let person = null;
 		if (showPersons) {
 			person = (
@@ -68,16 +70,16 @@ class App extends Component {
 		}
 		return (
 			<div className='text-center'>
-				<div className='alert alert-info'>
+				<Alert variant='info'>
 					<h2>Person Manager</h2>
-				</div>
-				<h5 className='alert alert-light'>
+				</Alert>
+
+				<Alert variant='light'>
 					Number of persons :
-					<span
-						className={`badge badge-pill ml-1 ${badgeStyle.join(
-							' '
-						)}`}>{` ${persons.length}`}</span>
-				</h5>
+					<Badge pill variant={badgeStyle}>
+						{persons.length}
+					</Badge>
+				</Alert>
 
 				<div className='m-2 p-2'>
 					<form
@@ -93,20 +95,22 @@ class App extends Component {
 							/>
 
 							<div className='input-group-prepend'>
-								<button
+								<Button
 									type='submit'
+									variant='success'
+									size='md'
+									className='fa fa-plus-square'
 									onClick={this.handleNewPerson}
-									className='btn btn-md btn-success fa fa-plus-square'
 								/>
 							</div>
 						</div>
 					</form>
 				</div>
-				<button
+				<Button
 					onClick={this.handleShowPerson}
-					className={showPersons ? 'btn btn-success' : 'btn btn-warning'}>
+					variant={showPersons ? 'success' : 'danger'}>
 					{showPersons ? 'hide persons' : 'show persons'}
-				</button>
+				</Button>
 				{person}
 			</div>
 		);

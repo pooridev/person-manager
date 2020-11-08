@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
-import { Button, Alert, Badge } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-import Persons from './components/Persons';
+import Persons from './components/person/Persons';
+
+import Header from './common/Header';
 
 import './App.css';
 
@@ -32,7 +34,7 @@ class App extends Component {
 		const personIndex = persons.findIndex(person => person.id === id);
 		const person = persons[personIndex];
 
-		// Toast
+		// Delete Person Toast
 		toast.error(`${person.fullName} has been deleted`, {
 			position: 'top-right',
 			closeButton: true,
@@ -63,7 +65,7 @@ class App extends Component {
 
 		persons.push(person);
 		this.setState({ persons, person: '' });
-		// Toast
+		// New Person Toast
 		toast.success('person has been added.', {
 			position: 'bottom-right',
 			closeButton: true,
@@ -77,10 +79,7 @@ class App extends Component {
 
 	render() {
 		const { persons, showPersons } = this.state;
-		let badgeStyle = '';
-		if (persons.length >= 3) badgeStyle = 'success';
-		if (persons.length <= 2) badgeStyle = 'warning';
-		if (persons.length <= 1) badgeStyle = 'danger';
+
 		let person = null;
 		if (showPersons) {
 			person = (
@@ -93,17 +92,9 @@ class App extends Component {
 		}
 		return (
 			<div className='text-center'>
-				<Alert variant='info'>
-					<h2>Person Manager</h2>
-				</Alert>
-
-				<Alert variant='light'>
-					Number of persons :
-					<Badge pill variant={badgeStyle}>
-						{persons.length}
-					</Badge>
-				</Alert>
-
+				{/*Main Header */}
+				<Header personsLength={person.length} />
+				{/*/Main Header */}
 				<div className='m-2 p-2'>
 					<form
 						className='form-inline justify-content-center'

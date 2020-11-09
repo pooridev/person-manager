@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Person = ({ fullName, personDelete, changed }) => {
 	return (

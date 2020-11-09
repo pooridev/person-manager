@@ -6,9 +6,10 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
+import SimpleContext from './context/SimpleContext';
+import Header from './components/common/Header';
+import NewPerson from './components/person/NewPerson';
 import Persons from './components/person/Persons';
-
-import Header from './common/Header';
 
 import './App.css';
 
@@ -18,6 +19,7 @@ class App extends Component {
 			{ fullName: 'Pooria Faramarzian', id: Math.floor(Math.random() * 100) },
 			{ fullName: 'John Doe', id: Math.floor(Math.random() * 100) }
 		],
+		appTitle: 'Person Manager',
 		person: '',
 		showPersons: true
 	};
@@ -91,43 +93,31 @@ class App extends Component {
 			);
 		}
 		return (
-			<div className='text-center'>
-				{/*Main Header */}
-				<Header personsLength={persons.length} />
-				{/*/Main Header */}
-				<div className='m-2 p-2'>
-					<form
-						className='form-inline justify-content-center'
-						onSubmit={event => event.preventDefault()}>
-						<div className='input-group col-6 col-md-4'>
-							<input
-								type='text'
-								placeholder='Give me a name'
-								className='taskInput form-control'
-								onChange={this.setPerson}
-								value={this.state.person}
-							/>
+			<SimpleContext.Provider
+				value={{
+					state: this.state,
+					handleChangePerson: this.handleChangePerson,
+					handleDeletePerson: this.handleDeletePerson,
+					handleNewPerson: this.handleNewPerson,
+					setPerson: this.setPerson
+				}}>
+				<div className='text-center'>
+					{/*Main Header */}
+					<Header />
+					{/*/Main Header */}
+					{/* New Person */}
+					<NewPerson />
+					{/*/New Person */}
 
-							<div className='input-group-prepend'>
-								<Button
-									type='submit'
-									variant='success'
-									size='md'
-									className='fa fa-plus-square'
-									onClick={this.handleNewPerson}
-								/>
-							</div>
-						</div>
-					</form>
+					<Button
+						onClick={this.handleShowPerson}
+						variant={showPersons ? 'success' : 'danger'}>
+						{showPersons ? 'hide persons' : 'show persons'}
+					</Button>
+					{person}
+					<ToastContainer />
 				</div>
-				<Button
-					onClick={this.handleShowPerson}
-					variant={showPersons ? 'success' : 'danger'}>
-					{showPersons ? 'hide persons' : 'show persons'}
-				</Button>
-				{person}
-				<ToastContainer />
-			</div>
+			</SimpleContext.Provider>
 		);
 	}
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import SimpleContext from './../../context/SimpleContext';
 
@@ -7,29 +7,27 @@ import { Alert, Badge } from 'react-bootstrap';
 // import context from 'react-bootstrap/esm/AccordionContext';
 
 const Header = ({ personsLength }) => {
+	const context = useContext(SimpleContext);
+	const { persons } = context.state;
 	let badgeStyle = '';
-	if (personsLength >= 3) badgeStyle = 'success';
-	if (personsLength <= 2) badgeStyle = 'warning';
-	if (personsLength <= 1) badgeStyle = 'danger';
+	if (persons.length >= 3) badgeStyle = 'success';
+	if (persons.length <= 2) badgeStyle = 'warning';
+	if (persons.length <= 1) badgeStyle = 'danger';
 
 	return (
 		<div>
-			<SimpleContext.Consumer>
-				{context => (
-					<div>
-						<Alert variant='info'>
-							<h2>{context.state.appTitle}</h2>
-						</Alert>
+			<div>
+				<Alert variant='info'>
+					<h2>{context.state.appTitle}</h2>
+				</Alert>
 
-						<Alert variant='light'>
-							Number of persons :
-							<Badge pill variant={badgeStyle}>
-								{context.state.persons.length}
-							</Badge>
-						</Alert>
-					</div>
-				)}
-			</SimpleContext.Consumer>
+				<Alert variant='light'>
+					Number of persons :
+					<Badge pill variant={badgeStyle}>
+						{persons.length}
+					</Badge>
+				</Alert>
+			</div>
 		</div>
 	);
 };

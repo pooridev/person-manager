@@ -6,9 +6,10 @@ import { Alert, Badge } from 'react-bootstrap';
 
 // import context from 'react-bootstrap/esm/AccordionContext';
 
-const Header = ({ personsLength }) => {
+const Header = () => {
 	const context = useContext(SimpleContext);
-	const { persons } = context.state;
+	const { persons, appTitle } = context.state;
+
 	let badgeStyle = '';
 	if (persons.length >= 3) badgeStyle = 'success';
 	if (persons.length <= 2) badgeStyle = 'warning';
@@ -18,7 +19,7 @@ const Header = ({ personsLength }) => {
 		<div>
 			<div>
 				<Alert variant='info'>
-					<h2>{context.state.appTitle}</h2>
+					<h2>{appTitle}</h2>
 				</Alert>
 
 				<Alert variant='light'>

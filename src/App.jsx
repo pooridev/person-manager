@@ -80,17 +80,11 @@ class App extends Component {
 	};
 
 	render() {
-		const { persons, showPersons } = this.state;
+		const { showPersons } = this.state;
 
 		let person = null;
 		if (showPersons) {
-			person = (
-				<Persons
-					persons={persons}
-					personDelete={this.handleDeletePerson}
-					personChange={this.handleChangePerson}
-				/>
-			);
+			person = <Persons />;
 		}
 		return (
 			<SimpleContext.Provider
@@ -108,7 +102,6 @@ class App extends Component {
 					{/* New Person */}
 					<NewPerson />
 					{/*/New Person */}
-
 					<Button
 						onClick={this.handleShowPerson}
 						variant={showPersons ? 'success' : 'danger'}>

@@ -5,7 +5,7 @@ import SimpleContext from './../../context/SimpleContext';
 const Persons = () => {
 	const context = useContext(SimpleContext);
 	const { handleDeletePerson, handleChangePerson } = context;
-	const { persons } = context.state;
+	const { persons } = context;
 	return (
 		<div>
 			{persons.map(person => (

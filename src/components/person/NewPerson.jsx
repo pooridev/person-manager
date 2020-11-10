@@ -19,7 +19,7 @@ const NewPerson = () => {
 						placeholder='Give me a name'
 						className='taskInput form-control'
 						onChange={setPerson}
-						value={context.state.person}
+						value={context.person}
 					/>
 
 					<div className='input-group-prepend'>

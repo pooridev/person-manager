@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import { Button } from 'react-bootstrap';
 
@@ -13,26 +13,20 @@ import Persons from './components/person/Persons';
 
 import './App.css';
 
-class App extends Component {
-	state = {
-		persons: [
-			{ fullName: 'Pooria Faramarzian', id: Math.floor(Math.random() * 100) },
-			{ fullName: 'John Doe', id: Math.floor(Math.random() * 100) }
-		],
-		appTitle: 'Person Manager',
-		person: '',
-		showPersons: true
-	};
+const App = () => {
+	const [getPersons, setPersons] = useState([]);
+	const [getSinglePerson, setSinglePerson] = useState('');
+	const [getShowPersons, setShowPersons] = useState(true);
+
 	// Show/Hide Persons
-	handleShowPerson = () => {
-		this.setState({ showPersons: !this.state.showPersons });
+	const handleShowPerson = () => {
+		setShowPersons(!getShowPersons);
 	};
 	// Delete Person
-	handleDeletePerson = id => {
-		const persons = [...this.state.persons];
+	const handleDeletePerson = id => {
+		const persons = [...getPersons];
 		const filteredPersons = persons.filter(person => person.id !== id);
-		this.setState({ persons: filteredPersons });
-
+		setPersons(filteredPersons);
 		const personIndex = persons.findIndex(person => person.id === id);
 		const person = persons[personIndex];
 
@@ -44,29 +38,31 @@ class App extends Component {
 		});
 	};
 	// Edit Person
-	handleChangePerson = (event, id) => {
-		const { persons: allPersons } = this.state;
+	const handleChangePerson = (event, id) => {
+		const allPersons = getPersons;
 		const personIndex = allPersons.findIndex(person => person.id === id);
+
 		const person = allPersons[personIndex];
 		person.fullName = event.target.value;
-
+		
 		const persons = [...allPersons];
 		persons[personIndex] = person;
 
-		this.setState({ persons });
+		setPersons(persons);
 	};
 	// New Person
-	handleNewPerson = () => {
+	const handleNewPerson = () => {
 		const taskInput = document.querySelector('.taskInput');
 		if (taskInput.value === null || taskInput.value === '') return;
-		const persons = [...this.state.persons];
+		const persons = [...getPersons];
 		const person = {
 			id: Math.floor(Math.random() * 100),
-			fullName: this.state.person
+			fullName: getSinglePerson
 		};
 
 		persons.push(person);
-		this.setState({ persons, person: '' });
+		setPersons(persons);
+		setSinglePerson('');
 		// New Person Toast
 		toast.success('person has been added.', {
 			position: 'bottom-right',
@@ -75,43 +71,41 @@ class App extends Component {
 		});
 	};
 
-	setPerson = event => {
-		this.setState({ person: event.target.value });
+	const setPerson = event => {
+		setSinglePerson(event.target.value);
 	};
 
-	render() {
-		const { showPersons } = this.state;
-
-		let person = null;
-		if (showPersons) {
-			person = <Persons />;
-		}
-		return (
-			<SimpleContext.Provider
-				value={{
-					state: this.state,
-					handleChangePerson: this.handleChangePerson,
-					handleDeletePerson: this.handleDeletePerson,
-					handleNewPerson: this.handleNewPerson,
-					setPerson: this.setPerson
-				}}>
-				<div className='text-center'>
-					{/*Main Header */}
-					<Header />
-					{/*/Main Header */}
-					{/* New Person */}
-					<NewPerson />
-					{/*/New Person */}
-					<Button
-						onClick={this.handleShowPerson}
-						variant={showPersons ? 'success' : 'danger'}>
-						{showPersons ? 'hide persons' : 'show persons'}
-					</Button>
-					{person}
-					<ToastContainer />
-				</div>
-			</SimpleContext.Provider>
-		);
+	let person = null;
+	if (getShowPersons) {
+		person = <Persons />;
 	}
-}
+	return (
+		
+		<SimpleContext.Provider
+			value={{
+				persons: getPersons,
+				person: getSinglePerson,
+				handleChangePerson: handleChangePerson,
+				handleDeletePerson: handleDeletePerson,
+				handleNewPerson: handleNewPerson,
+				setPerson: setPerson
+			}}>
+			<div className='text-center'>
+				{/*Main Header */}
+				<Header appTitle='Person Manager' />
+				{/*/Main Header */}
+				{/* New Person */}
+				<NewPerson />
+				{/*/New Person */}
+				<Button
+					onClick={handleShowPerson}
+					variant={getShowPersons ? 'success' : 'danger'}>
+					{getShowPersons ? 'hide persons' : 'show persons'}
+				</Button>
+				{person}
+				<ToastContainer />
+			</div>
+		</SimpleContext.Provider>
+	);
+};
 export default App;

@@ -1,22 +1,25 @@
-import React, { useContext } from 'react';
+import React, { Component } from 'react';
 import Person from './Person';
 import SimpleContext from './../../context/SimpleContext';
 
-const Persons = () => {
-	const context = useContext(SimpleContext);
-	const { handleDeletePerson, handleChangePerson } = context;
-	const { persons } = context.state;
-	return (
-		<div>
-			{persons.map(person => (
-				<Person
-					key={person.id}
-					fullName={person.fullName}
-					personDelete={() => handleDeletePerson(person.id)}
-					changed={event => handleChangePerson(event, person.id)}
-				/>
-			))}
-		</div>
-	);
-};
+class Persons extends Component {
+	render() {
+		return (
+			<SimpleContext.Consumer>
+				{context => (
+					<div>
+						{context.state.persons.map(person => (
+							<Person
+								key={person.id}
+								fullName={person.fullName}
+								personDelete={() => context.handleDeletePerson(person.id)}
+								changed={event => context.handleChangePerson(event, person.id)}
+							/>
+						))}
+					</div>
+				)}
+			</SimpleContext.Consumer>
+		);
+	}
+}
 export default Persons;

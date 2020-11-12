@@ -25,7 +25,7 @@ class App extends Component {
 		],
 		person: '',
 		showPersons: true,
-		appTitle: 'مدیریت کننده اشخاص'
+		appTitle: 'Person Manager'
 	};
 
 	static getDerivedStateFromProps(props, state) {
@@ -34,6 +34,19 @@ class App extends Component {
 	}
 	componentDidMount() {
 		console.log('componentDidMount');
+	}
+	shouldComponentUpdate(nextProp, nextState) {
+		console.log('App.jsx shouldComponentUpdate');
+		return true;
+	}
+	getSnapshotBeforeUpdate(prevProps, prevStates) {
+		console.log('App.jsx getSnapshotBeforeUpdate');
+		const snapShot = { prevProps, prevStates };
+		return snapShot;
+	}
+	componentDidUpdate(prevProps, prevStates, snapShot) {
+		console.log('App,jsx componentDidUpdate');
+		console.log(snapShot);
 	}
 
 	static contextType = SimpleContext;

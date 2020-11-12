@@ -8,7 +8,7 @@ import { Alert, Badge } from 'react-bootstrap';
 
 const Header = ({appTitle}) => {
 	const context = useContext(SimpleContext);
-	const { persons } = context;
+	const { persons } = context.state;
 
 	let badgeStyle = '';
 	if (persons.length >= 3) badgeStyle = 'success';

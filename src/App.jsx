@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 
 import { Button } from 'react-bootstrap';
 
@@ -13,20 +13,39 @@ import Persons from './components/person/Persons';
 
 import './App.css';
 
-const App = () => {
-	const [getPersons, setPersons] = useState([]);
-	const [getSinglePerson, setSinglePerson] = useState('');
-	const [getShowPersons, setShowPersons] = useState(true);
+class App extends Component {
+	//Lifecycle Hooks
+	constructor() {
+		super();
+		console.log('constructor');
+	}
+	state = {
+		persons: [
+			{ fullName: 'Pooria Faramarzian', id: Math.floor(Math.random() * 100) }
+		],
+		person: '',
+		showPersons: true,
+		appTitle: 'مدیریت کننده اشخاص'
+	};
 
+	static getDerivedStateFromProps(props, state) {
+		console.log('getDerivedStateFromProps');
+		console.log(state);
+	}
+	componentDidMount() {
+		console.log('componentDidMount');
+	}
+
+	static contextType = SimpleContext;
 	// Show/Hide Persons
-	const handleShowPerson = () => {
-		setShowPersons(!getShowPersons);
+	handleShowPerson = () => {
+		this.setState({ showPersons: !this.state.showPersons });
 	};
 	// Delete Person
-	const handleDeletePerson = id => {
-		const persons = [...getPersons];
+	handleDeletePerson = id => {
+		const persons = [...this.state.persons];
 		const filteredPersons = persons.filter(person => person.id !== id);
-		setPersons(filteredPersons);
+		this.setState({ persons: filteredPersons });
 		const personIndex = persons.findIndex(person => person.id === id);
 		const person = persons[personIndex];
 
@@ -38,31 +57,31 @@ const App = () => {
 		});
 	};
 	// Edit Person
-	const handleChangePerson = (event, id) => {
-		const allPersons = getPersons;
+	handleChangePerson = (event, id) => {
+		const { persons: allPersons } = this.state;
 		const personIndex = allPersons.findIndex(person => person.id === id);
 
 		const person = allPersons[personIndex];
 		person.fullName = event.target.value;
-		
+
 		const persons = [...allPersons];
 		persons[personIndex] = person;
 
-		setPersons(persons);
+		this.setState({ persons });
 	};
 	// New Person
-	const handleNewPerson = () => {
+	handleNewPerson = () => {
 		const taskInput = document.querySelector('.taskInput');
 		if (taskInput.value === null || taskInput.value === '') return;
-		const persons = [...getPersons];
+		const persons = [...this.state.persons];
 		const person = {
 			id: Math.floor(Math.random() * 100),
-			fullName: getSinglePerson
+			fullName: this.state.person
 		};
 
 		persons.push(person);
-		setPersons(persons);
-		setSinglePerson('');
+		this.setState({ persons, person: '' });
+
 		// New Person Toast
 		toast.success('person has been added.', {
 			position: 'bottom-right',
@@ -71,41 +90,42 @@ const App = () => {
 		});
 	};
 
-	const setPerson = event => {
-		setSinglePerson(event.target.value);
+	setPerson = event => {
+		this.setState({ person: event.target.value });
 	};
+	render() {
+		const { showPersons } = this.state;
 
-	let person = null;
-	if (getShowPersons) {
-		person = <Persons />;
+		let person = null;
+		if (showPersons) {
+			person = <Persons />;
+		}
+		return (
+			<SimpleContext.Provider
+				value={{
+					state: this.state,
+					handleDeletePerson: this.handleDeletePerson,
+					handleChangePerson: this.handleChangePerson,
+					handleNewPerson: this.handleNewPerson,
+					setPerson: this.setPerson
+				}}>
+				<div className='text-center'>
+					{/*Main Header */}
+					<Header appTitle='Person Manager' />
+					{/*/Main Header */}
+					{/* New Person */}
+					<NewPerson />
+					{/*/New Person */}
+					<Button
+						onClick={this.handleShowPerson}
+						variant={this.getShowPersons ? 'success' : 'danger'}>
+						{showPersons ? 'hide persons' : 'show persons'}
+					</Button>
+					{person}
+					<ToastContainer />
+				</div>
+			</SimpleContext.Provider>
+		);
 	}
-	return (
-		
-		<SimpleContext.Provider
-			value={{
-				persons: getPersons,
-				person: getSinglePerson,
-				handleChangePerson: handleChangePerson,
-				handleDeletePerson: handleDeletePerson,
-				handleNewPerson: handleNewPerson,
-				setPerson: setPerson
-			}}>
-			<div className='text-center'>
-				{/*Main Header */}
-				<Header appTitle='Person Manager' />
-				{/*/Main Header */}
-				{/* New Person */}
-				<NewPerson />
-				{/*/New Person */}
-				<Button
-					onClick={handleShowPerson}
-					variant={getShowPersons ? 'success' : 'danger'}>
-					{getShowPersons ? 'hide persons' : 'show persons'}
-				</Button>
-				{person}
-				<ToastContainer />
-			</div>
-		</SimpleContext.Provider>
-	);
-};
+}
 export default App;

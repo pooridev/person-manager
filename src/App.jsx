@@ -91,7 +91,6 @@ class App extends Component {
 			id: Math.floor(Math.random() * 100),
 			fullName: this.state.person
 		};
-
 		persons.push(person);
 		this.setState({ persons, person: '' });
 

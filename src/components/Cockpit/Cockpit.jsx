@@ -5,9 +5,10 @@ const cockPit = ({ persons, clicked, showPersons }) => {
   const assignedClasses = [];
   let btnClasses = '';
   if (showPersons) btnClasses = classes.red;
-  console.log(btnClasses);
-  if (persons.length <= 2) assignedClasses.push('red');
-  if (persons.length <= 1) assignedClasses.push('bold');
+  persons.length <= 2 
+    && assignedClasses.push('red');
+  persons.length <= 1 
+    && assignedClasses.push('bold');
   
   return(
     <div className={classes.Cockpit}>

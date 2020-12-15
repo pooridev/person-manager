@@ -55,12 +55,13 @@ class App extends Component {
       )
      
     };
-  
-
 
     return (
       <div className={Classes.App}>
-        <CockPit persons={this.state.persons} clicked={this.handleShowPersons} showPersons={this.state.shouldShow} />
+        <CockPit 
+          persons={this.state.persons} 
+          clicked={this.handleShowPersons} 
+          showPersons={this.state.shouldShow} />
         {persons}
       </div>
     );

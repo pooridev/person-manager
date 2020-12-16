@@ -5,19 +5,21 @@ const cockPit = ({ persons, clicked, showPersons, title }) => {
   const assignedClasses = [];
   let btnClasses = '';
   if (showPersons) btnClasses = classes.red;
+
   persons.length <= 2 
-    && assignedClasses.push('red');
+    && assignedClasses.push( classes.red );
   persons.length <= 1 
-    && assignedClasses.push('bold');
+    && assignedClasses.push( classes.bold );
   
   return(
     <div className={classes.Cockpit}>
-      <p className={assignedClasses.join(' ')}>{title}</p>
+      <h1>{title}</h1>
+      <p className={assignedClasses.join(' ')}>OMG, It's working</p>
       <button 
         onClick={clicked}
         alt={showPersons}
-        className={btnClasses}
-        >
+        className={btnClasses}>
+          
         Toggle
       </button>
     </div>

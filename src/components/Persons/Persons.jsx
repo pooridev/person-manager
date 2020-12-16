@@ -11,7 +11,7 @@ const Persons = ({ persons, clicked, changed }) => {
           name={person.name}
           age={person.age}
           key={person.id}
-          changed={(event)=> changed(event, person.id)}/>
+          changed={event => changed(event, person.id)}/>
       ))}
     </div>
   );

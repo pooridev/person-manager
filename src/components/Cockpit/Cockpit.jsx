@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './CockPit.module.css'
 
-const cockPit = ({ persons, clicked, showPersons }) => {
+const cockPit = ({ persons, clicked, showPersons, title }) => {
   const assignedClasses = [];
   let btnClasses = '';
   if (showPersons) btnClasses = classes.red;
@@ -12,7 +12,7 @@ const cockPit = ({ persons, clicked, showPersons }) => {
   
   return(
     <div className={classes.Cockpit}>
-      <p className={assignedClasses.join(' ')}>OMG, It's working</p>
+      <p className={assignedClasses.join(' ')}>{title}</p>
       <button 
         onClick={clicked}
         alt={showPersons}

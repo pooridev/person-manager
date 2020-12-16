@@ -18,7 +18,7 @@ class App extends Component {
     this.setState({ shouldShow : !this.state.shouldShow });
   };
 
-  changePersonHandler = (personId, event) =>{
+  changePersonHandler = (event, personId ) =>{
     const personIndex = this.state.persons.findIndex(person => person.id === personId);
     
     const person = {
@@ -57,7 +57,8 @@ class App extends Component {
 
     return (
       <div className={Classes.App}>
-        <CockPit 
+        <CockPit
+          title={this.props.appTitle}
           persons={this.state.persons} 
           clicked={this.handleShowPersons} 
           showPersons={this.state.shouldShow} />

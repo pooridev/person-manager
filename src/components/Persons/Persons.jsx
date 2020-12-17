@@ -3,6 +3,7 @@ import Person from './Person/Person';
 
 
 const Persons = ({ persons, clicked, changed }) => {
+  console.log('Persons rendering');
   return(
     <div>
       {persons.map((person, index) => (

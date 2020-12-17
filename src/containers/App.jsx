@@ -5,6 +5,11 @@ import Persons from './../components/Persons/Persons';
 import CockPit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    console.log('[App.js] constructor');
+  };
+
   state = {
     persons:[
       { name:'Poori' , age: 18, id:'kjhdktt' },
@@ -13,6 +18,16 @@ class App extends Component {
     ],
     shouldShow: false
   };
+  static getDerivedStateFromProps(props, state) {
+    console.log('[App.js] getDerivedStateFromProps', props);
+    return state;
+  }
+  componentWillMount(){
+    console.log('[App.js] componentWillMount');
+  }
+  componentDidMount(){
+    console.log('[App.js] componentDidMount');
+  }
 
   handleShowPersons = () => {
     this.setState({ shouldShow : !this.state.shouldShow });
@@ -39,7 +54,7 @@ class App extends Component {
   };
 
   render() {
-    
+    console.log('[App.js] render');
 
     const { shouldShow } = this.state;
     let persons = null;

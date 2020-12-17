@@ -19,7 +19,7 @@ const cockPit = ({ persons, clicked, showPersons, title }) => {
         onClick={clicked}
         alt={showPersons}
         className={btnClasses}>
-          
+
         Toggle
       </button>
     </div>

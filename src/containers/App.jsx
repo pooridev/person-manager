@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import Classes from './App.module.css';
 import Persons from './../components/Persons/Persons';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import CockPit from '../components/Cockpit/Cockpit';
 
 import SimpleBar from 'simplebar-react';
@@ -56,6 +57,15 @@ class App extends Component {
 
 	deletePersonHandler = personIndex => {
 		const persons = [...this.state.persons];
+		toast.error(`${persons[personIndex].name} has just deleted`, {
+			position: 'top-right',
+			autoClose: 5000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined
+		});
 		persons.splice(personIndex, 1);
 		this.setState({ persons });
 	};
@@ -91,6 +101,7 @@ class App extends Component {
 						showPersons={this.state.shouldShow}
 					/>
 					{persons}
+					<ToastContainer />
 				</div>
 			</SimpleBar>
 		);

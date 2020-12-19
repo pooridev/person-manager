@@ -16,15 +16,13 @@ class App extends Component {
       { name: 'Ali' , age: 15, id:'lkjdsbf' },
       { name: 'BlueFish' , age: 20, id:'dddf' }
     ],
-    shouldShow: false
+    shouldShow: true
   };
   static getDerivedStateFromProps(props, state) {
     console.log('[App.js] getDerivedStateFromProps', props);
     return state;
   }
-  componentWillMount(){
-    console.log('[App.js] componentWillMount');
-  }
+  
   componentDidMount(){
     console.log('[App.js] componentDidMount');
   }

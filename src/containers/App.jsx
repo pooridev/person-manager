@@ -13,7 +13,7 @@ class App extends Component {
 		person: '',
 		persons: JSON.parse(localStorage.getItem('persons')) || []
 	};
-	
+
 	// set input value to state
 	setperson = e => {
 		this.setState({ person: e.target.value });
@@ -37,13 +37,13 @@ class App extends Component {
 		});
 	};
 
-
 	// edit person handler
 	editPersonHandler = (e, personindex) => {
 		const persons = [...this.state.persons];
 		persons[personindex].name = e.target.value;
 
 		this.setState({ persons });
+		localStorage.setItem('persons', JSON.stringify(persons));
 	};
 	// delete person handler
 	deletePersonHandler = personindex => {
@@ -51,9 +51,8 @@ class App extends Component {
 		persons.splice(personindex, 1);
 
 		this.setState({ persons });
+		localStorage.setItem('persons', JSON.stringify(persons));
 	};
-
-	
 
 	render() {
 		const { persons } = this.state;

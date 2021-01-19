@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Alert, AlertIcon, ChakraProvider, Container } from '@chakra-ui/react';
-import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
 import Header from '../components/Header/Header';
 import Persons from '../components/Persons/Persons';
@@ -12,11 +11,9 @@ import Newperson from '../components/Persons/NewPerson/NewPerson';
 class App extends Component {
 	state = {
 		person: '',
-		persons: [
-			{ name: 'pooria', id: 'sdsd' },
-			{ name: 'Ali', id: 'grtr' }
-		]
+		persons: JSON.parse(localStorage.getItem('persons')) || []
 	};
+	
 	// set input value to state
 	setperson = e => {
 		this.setState({ person: e.target.value });
@@ -32,7 +29,14 @@ class App extends Component {
 		};
 		persons.push(person);
 		this.setState({ persons, person: '' });
+		localStorage.setItem('persons', JSON.stringify(persons));
+
+		toast.success('Whooo, We got new person', {
+			position: 'top-right',
+			autoClose: 1700
+		});
 	};
+
 
 	// edit person handler
 	editPersonHandler = (e, personindex) => {
@@ -49,35 +53,36 @@ class App extends Component {
 		this.setState({ persons });
 	};
 
+	
+
 	render() {
 		const { persons } = this.state;
 		return (
-			<SimpleBar style={{ maxHeight: '100vh', textAlign: 'center' }}>
-				<ChakraProvider>
-					<>
-						<Header personsLength={this.state.persons.length} />
-						<Container>
-							<Newperson
-								setPerson={this.setperson}
-								newPersonHandler={this.newPersonHandler}
-								state={this.state}
-							/>
-							{persons.length == 0 ? (
-								<Alert mt='1.2rem' rounded='md' status='warning'>
-									<AlertIcon />
-									There is no name, you can add one above 🥰
-								</Alert>
-							) : null}
-							<Persons
-								persons={this.state.persons}
-								setPerson={this.setPerson}
-								deleteHandler={this.deletePersonHandler}
-								editHandler={this.editPersonHandler}
-							/>
-						</Container>
-					</>
-				</ChakraProvider>
-			</SimpleBar>
+			<ChakraProvider>
+				<>
+					<Header personsLength={this.state.persons.length} />
+					<Container>
+						<Newperson
+							setPerson={this.setperson}
+							newPersonHandler={this.newPersonHandler}
+							state={this.state}
+						/>
+						{persons.length == 0 ? (
+							<Alert mt='1.2rem' rounded='md' status='warning'>
+								<AlertIcon />
+								There is no name, you can add one above 🥰
+							</Alert>
+						) : null}
+						<Persons
+							persons={this.state.persons}
+							setPerson={this.setPerson}
+							deleteHandler={this.deletePersonHandler}
+							editHandler={this.editPersonHandler}
+						/>
+					</Container>
+					<ToastContainer />
+				</>
+			</ChakraProvider>
 		);
 	}
 }

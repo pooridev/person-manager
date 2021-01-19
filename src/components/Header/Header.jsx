@@ -8,6 +8,7 @@ const Header = props => {
 		<Box
 			as='header'
 			bg='#F6FBFF'
+			textAlign='center'
 			boxShadow='1px 1px 3px #f2f2f2'
 			mb='1.2rem'
 			py='2.5rem'>

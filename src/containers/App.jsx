@@ -33,9 +33,13 @@ class App extends Component {
 		persons.push(person);
 		this.setState({ persons, person: '' });
 	};
+
 	// edit person handler
 	editPersonHandler = (e, personindex) => {
 		const persons = [...this.state.persons];
+		persons[personindex].name = e.target.value;
+
+		this.setState({ persons });
 	};
 	// delete person handler
 	deletePersonHandler = personindex => {
@@ -68,6 +72,7 @@ class App extends Component {
 								persons={this.state.persons}
 								setPerson={this.setPerson}
 								deleteHandler={this.deletePersonHandler}
+								editHandler={this.editPersonHandler}
 							/>
 						</Container>
 					</>

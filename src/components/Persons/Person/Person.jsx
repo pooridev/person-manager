@@ -1,6 +1,5 @@
 import { Box, Flex, IconButton, Input, Spacer } from '@chakra-ui/react';
 import React, { Component } from 'react';
-import Draggable from 'react-draggable'; // The default
 import { BiTrashAlt } from 'react-icons/bi';
 class Person extends Component {
 	render() {
@@ -26,13 +25,14 @@ class Person extends Component {
 							size='lg'
 							value={name}
 							variant='unstyled'
-							onChange={e => changed(e)}
+							onChange={changed}
 						/>
 					</Box>
 					<Spacer />
 					<Box>
 						<IconButton
 							icon={<BiTrashAlt size='1.2rem' />}
+							outline='none'
 							aria-label='Delete Person'
 							colorScheme='red'
 							ml='8px'

@@ -1,4 +1,3 @@
-import { Container } from '@chakra-ui/react';
 import React, { Component } from 'react';
 import Person from './Person/Person';
 
@@ -13,7 +12,7 @@ class Persons extends Component {
 							key={person.id}
 							name={person.name}
 							changed={e => editHandler(e, index)}
-							clicked={()=>deleteHandler(index)}
+							clicked={() => deleteHandler(index)}
 						/>
 					))}
 				</ul>

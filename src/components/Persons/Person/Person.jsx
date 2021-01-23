@@ -8,9 +8,9 @@ import {
 import React, { Component } from 'react';
 import { BiTrashAlt } from 'react-icons/bi';
 class Person extends Component {
+
 	render() {
 		const { name, changed, clicked } = this.props;
-
 		return (
 				<Box
 					as='li'

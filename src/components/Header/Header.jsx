@@ -1,5 +1,5 @@
 import { Badge, Box, Heading, Text } from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Header = props => {
 	// props
@@ -16,7 +16,7 @@ const Header = props => {
 			<Text pt='5' fontSize='1.4rem'>
 				Persons number :
 				<Badge
-					colorScheme={personsLength == 0 ? 'red' : 'teal'}
+					colorScheme={personsLength === 0 ? 'red' : 'teal'}
 					fontWeight='500'
 					fontSize='1.3rem'>
 					{personsLength}

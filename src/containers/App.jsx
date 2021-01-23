@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Alert, AlertIcon, ChakraProvider, Container } from '@chakra-ui/react';
-import 'simplebar/dist/simplebar.min.css';
 import Header from '../components/Header/Header';
 import Persons from '../components/Persons/Persons';
 import Newperson from '../components/Persons/NewPerson/NewPerson';
@@ -21,11 +20,11 @@ class App extends Component {
 	// new person handler
 	newPersonHandler = e => {
 		e.preventDefault();
-		if (this.state.person == '') return;
+		if (this.state.person === '') return;
 		const persons = [...this.state.persons];
 		const person = {
 			name: this.state.person,
-			id: this.state.persons.length + 1
+			id: this.state.persons.length + 2
 		};
 		persons.push(person);
 		this.setState({ persons, person: '' });
@@ -66,10 +65,10 @@ class App extends Component {
 							newPersonHandler={this.newPersonHandler}
 							state={this.state}
 						/>
-						{persons.length == 0 ? (
+						{persons.length === 0 ? (
 							<Alert mt='1.2rem' rounded='md' status='warning'>
 								<AlertIcon />
-								There is no name, you can add one above 🥰
+								There is no person, you can add one above 🥰
 							</Alert>
 						) : null}
 						<Persons

@@ -1,11 +1,16 @@
 import { IconButton, Input, InputGroup } from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { BiPlus } from 'react-icons/bi';
 
 const Newperson = props => {
 	// props
 	const { setPerson, newPersonHandler, state } = props;
 
+	// auto focus on text input
+	const autoFocusRef = useRef(null);
+	useEffect(() => {
+		autoFocusRef.current.focus();
+	}, []);
 	return (
 		<form onSubmit={newPersonHandler}>
 			<InputGroup size='lg' mt='1.2rem'>
@@ -15,6 +20,7 @@ const Newperson = props => {
 					variant='outline'
 					onChange={setPerson}
 					value={state.person}
+					ref={autoFocusRef}
 				/>
 				<IconButton
 					aria-label='Add New Person'
